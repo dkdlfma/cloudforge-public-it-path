@@ -1,0 +1,119 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: aws_edu - 잡알리오 정보통신 공고 매일 자동 수집 (Lambda + EventBridge + S3 + SSM)
+
+Parameters:
+  Team:
+    Type: String
+    Description: 팀 이름 (예 team04-kang)
+  BucketName:
+    Type: String
+    Description: 데이터 버킷 (upload_s3.py 가 만든 aws-edu-<팀>-<계정번호>)
+  CodeKey:
+    Type: String
+    Description: S3 에 올린 Lambda 코드 zip 경로
+  ApiUrl:
+    Type: String
+    Default: https://apis.data.go.kr/1051000/recruitment/list
+  ParamName:
+    Type: String
+    Default: /edu-team/jobalio-key
+  Schedule:
+    Type: String
+    Default: cron(0 18 * * ? *)
+    Description: 실행 시각 (UTC). 기본값 = 매일 한국시간 새벽 3시
+  ScheduleState:
+    Type: String
+    Default: ENABLED
+    AllowedValues: [ENABLED, DISABLED]
+    Description: Step Functions 파이프라인(infra/pipeline-stack.yaml)이 있으면 DISABLED (파이프라인이 수집부터 실행)
+
+Resources:
+  CollectRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: !Sub aws-edu-${Team}-collect-role
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal: { Service: lambda.amazonaws.com }
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      Policies:
+        - PolicyName: collect-access
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow                       # 데이터 버킷의 raw/ processed/ 만
+                Action: [s3:GetObject, s3:PutObject]
+                Resource:
+                  - !Sub arn:aws:s3:::${BucketName}/raw/*
+                  - !Sub arn:aws:s3:::${BucketName}/processed/*
+              - Effect: Allow
+                Action: s3:ListBucket
+                Resource: !Sub arn:aws:s3:::${BucketName}
+              - Effect: Allow                       # 인증키 파라미터 하나만 읽기
+                Action: ssm:GetParameter
+                Resource: !Sub arn:aws:ssm:${AWS::Region}:${AWS::AccountId}:parameter${ParamName}
+              - Effect: Allow
+                Action: kms:Decrypt
+                Resource: "*"
+                Condition:
+                  StringEquals:
+                    kms:ViaService: !Sub ssm.${AWS::Region}.amazonaws.com
+
+  CollectLogs:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub /aws/lambda/aws-edu-${Team}-collect
+      RetentionInDays: 14
+
+  CollectFunction:
+    Type: AWS::Lambda::Function
+    DependsOn: CollectLogs
+    Properties:
+      FunctionName: !Sub aws-edu-${Team}-collect
+      Description: 잡알리오 정보통신 공고 증분 수집 -> S3 processed/
+      Runtime: python3.12
+      Handler: lambda_collect.handler
+      Role: !GetAtt CollectRole.Arn
+      Timeout: 300
+      MemorySize: 1024
+      Code:
+        S3Bucket: !Ref BucketName
+        S3Key: !Ref CodeKey
+      Environment:
+        Variables:
+          BUCKET: !Ref BucketName
+          API_URL: !Ref ApiUrl
+          PARAM_NAME: !Ref ParamName
+          NCS_CD: R600020
+          MAX_PAGES: "5"
+
+  DailyRule:
+    Type: AWS::Events::Rule
+    Properties:
+      Name: !Sub aws-edu-${Team}-collect-daily
+      Description: 매일 한 번 공고 수집
+      ScheduleExpression: !Ref Schedule
+      State: !Ref ScheduleState
+      Targets:
+        - Id: collect
+          Arn: !GetAtt CollectFunction.Arn
+
+  RulePermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      FunctionName: !Ref CollectFunction
+      Action: lambda:InvokeFunction
+      Principal: events.amazonaws.com
+      SourceArn: !GetAtt DailyRule.Arn
+
+Outputs:
+  FunctionName:
+    Value: !Ref CollectFunction
+  RuleName:
+    Value: !Ref DailyRule
+  LogGroup:
+    Value: !Ref CollectLogs

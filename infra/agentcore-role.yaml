@@ -1,0 +1,76 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: aws_edu - AgentCore Runtime(추천 상담 에이전트) 실행 역할   담당 강민경 (AWS 문서의 direct code deploy 실행 역할 기준)
+
+Parameters:
+  Team:
+    Type: String
+  BucketName:
+    Type: String
+  AgentName:
+    Type: String
+    Description: AgentCore 런타임 이름 (영문·숫자·밑줄)
+
+Resources:
+  AgentRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: !Sub aws-edu-${Team}-agentcore-role
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Sid: AssumeRolePolicy
+            Effect: Allow
+            Principal: { Service: bedrock-agentcore.amazonaws.com }
+            Action: sts:AssumeRole
+            Condition:
+              StringEquals:
+                aws:SourceAccount: !Ref AWS::AccountId
+              ArnLike:
+                aws:SourceArn: !Sub arn:aws:bedrock-agentcore:${AWS::Region}:${AWS::AccountId}:*
+      Policies:
+        - PolicyName: agentcore-runtime
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow
+                Action: [logs:DescribeLogStreams, logs:CreateLogGroup]
+                Resource: !Sub arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/bedrock-agentcore/runtimes/*
+              - Effect: Allow
+                Action: logs:PutResourcePolicy
+                Resource: !Sub arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/bedrock-agentcore/runtimes/${AgentName}-*
+              - Effect: Allow
+                Action: logs:DescribeLogGroups
+                Resource: !Sub arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:*
+              - Effect: Allow
+                Action: [logs:CreateLogStream, logs:PutLogEvents]
+                Resource: !Sub arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/bedrock-agentcore/runtimes/*:log-stream:*
+              - Effect: Allow
+                Action: [xray:PutTraceSegments, xray:PutTelemetryRecords, xray:GetSamplingRules, xray:GetSamplingTargets]
+                Resource: "*"
+              - Effect: Allow
+                Action: cloudwatch:PutMetricData
+                Resource: "*"
+                Condition:
+                  StringEquals:
+                    cloudwatch:namespace: bedrock-agentcore
+              - Sid: BedrockModelInvocation            # global 추론 프로필은 여러 리전 모델로 라우팅됨
+                Effect: Allow
+                Action: [bedrock:InvokeModel, bedrock:InvokeModelWithResponseStream]
+                Resource:
+                  - arn:aws:bedrock:*::foundation-model/*
+                  - !Sub arn:aws:bedrock:*:${AWS::AccountId}:inference-profile/*
+                  - arn:aws:bedrock:*::inference-profile/*
+              - Sid: GuardrailCheck                    # .env 에 GUARDRAIL_ID 를 넣었을 때만 사용
+                Effect: Allow
+                Action: bedrock:ApplyGuardrail
+                Resource: !Sub arn:aws:bedrock:${AWS::Region}:${AWS::AccountId}:guardrail/*
+              - Sid: ReadDataAndCode                   # 분석 결과·배포 코드 읽기만
+                Effect: Allow
+                Action: s3:GetObject
+                Resource:
+                  - !Sub arn:aws:s3:::${BucketName}/processed/*
+                  - !Sub arn:aws:s3:::${BucketName}/code/agentcore/*
+
+Outputs:
+  RoleArn:
+    Value: !GetAtt AgentRole.Arn

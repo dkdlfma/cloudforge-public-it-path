@@ -1,0 +1,91 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Private PostgreSQL for the aws_edu team integration using the existing team VPC.
+
+Metadata:
+  AWSToolsMetrics:
+    AWSAgentToolkit: aws-cloudformation@3
+
+Parameters:
+  PrivateSubnetIds:
+    Type: List<AWS::EC2::Subnet::Id>
+    Description: Existing team VPC private subnets across at least two Availability Zones (Seoul).
+  DatabaseSecurityGroupId:
+    Type: AWS::EC2::SecurityGroup::Id
+    Description: Existing security group in the same VPC allowing TCP 5432 from approved clients.
+  DatabaseInstanceClass:
+    Type: String
+    Default: db.t4g.micro
+    AllowedValues: [db.t4g.micro, db.t3.micro]
+    Description: Burstable micro instance for the team integration test.
+
+Resources:
+  DatabaseSubnets:
+    Type: AWS::RDS::DBSubnetGroup
+    Metadata:
+      com.aws.cloudformation.Context:
+        why: Uses the team VPC network and existing access path for PostgreSQL.
+        must:
+          - Use private subnets in at least two different Availability Zones of the same VPC.
+    Properties:
+      DBSubnetGroupDescription: Private subnets for team04-kang aws_edu PostgreSQL.
+      SubnetIds: !Ref PrivateSubnetIds
+      Tags:
+        - Key: Team
+          Value: team04-kang
+        - Key: Project
+          Value: aws_edu
+
+  Database:
+    Type: AWS::RDS::DBInstance
+    DeletionPolicy: Snapshot
+    UpdateReplacePolicy: Snapshot
+    Metadata:
+      com.aws.cloudformation.Context:
+        why: Runs the team integration database with a small compute and storage footprint.
+        must:
+          - Keep network access private and limit PostgreSQL ingress to approved clients.
+          - Keep storage encrypted and let RDS manage the master password in Secrets Manager.
+        mutable: review-required
+    Properties:
+      DBInstanceIdentifier: !Sub '${AWS::StackName}-postgres'
+      DBInstanceClass: !Ref DatabaseInstanceClass
+      DBName: aws_edu
+      Engine: postgres
+      EngineVersion: '17'
+      EngineLifecycleSupport: open-source-rds-extended-support-disabled
+      AutoMinorVersionUpgrade: true
+      AllocatedStorage: '20'
+      StorageType: gp3
+      StorageEncrypted: true
+      MultiAZ: false
+      PubliclyAccessible: false
+      Port: '5432'
+      BackupRetentionPeriod: 1
+      CopyTagsToSnapshot: true
+      DBSubnetGroupName: !Ref DatabaseSubnets
+      VPCSecurityGroups:
+        - !Ref DatabaseSecurityGroupId
+      MasterUsername: aws_edu_admin
+      ManageMasterUserPassword: true
+      Tags:
+        - Key: Team
+          Value: team04-kang
+        - Key: Project
+          Value: aws_edu
+
+Outputs:
+  DbEndpoint:
+    Description: Private hostname for the application database.
+    Value: !GetAtt Database.Endpoint.Address
+  DbPort:
+    Description: PostgreSQL TCP port.
+    Value: !GetAtt Database.Endpoint.Port
+  DbName:
+    Description: Initial database for the project schema.
+    Value: aws_edu
+  DbSecretArn:
+    Description: Identifier for the RDS-managed master secret in Secrets Manager.
+    Value: !GetAtt Database.MasterUserSecret.SecretArn
+  DbInstanceIdentifier:
+    Description: RDS instance identifier for team operations.
+    Value: !Ref Database

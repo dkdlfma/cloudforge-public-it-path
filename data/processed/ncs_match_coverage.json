@@ -1,0 +1,2379 @@
+{
+  "as_of": "2026-11-19",
+  "timezone": "Asia/Seoul",
+  "include_closed": false,
+  "extraction_mode": "bedrock",
+  "backend": "mock_cosine",
+  "posting_total": 41,
+  "analyzed_posting_count": 41,
+  "missing_extraction_ids": [],
+  "unlinked_extraction_ids": [],
+  "competency_counts": {
+    "matched": 48,
+    "no_candidate": 95,
+    "query_unavailable": 1,
+    "not_selected": 0,
+    "outside_ncs_scope": 122
+  },
+  "postings": [
+    {
+      "id": "JA-306743",
+      "has_extraction": true,
+      "competencies": [
+        {
+          "name": "정보통신 초급기술자",
+          "type": "기타",
+          "requirement": "선택필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "엔지니어링 초급기술자",
+          "type": "기타",
+          "requirement": "선택필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        }
+      ]
+    },
+    {
+      "id": "JA-306746",
+      "has_extraction": true,
+      "competencies": [
+        {
+          "name": "정보통신기사",
+          "type": "자격증",
+          "requirement": "필수",
+          "status": "matched",
+          "ncs_codes": [
+            "2001090204_20v1",
+            "2002010305_22v3",
+            "2003030310_22v2",
+            "2002020606_18v1"
+          ]
+        },
+        {
+          "name": "통신설비기능장",
+          "type": "자격증",
+          "requirement": "필수",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "정보통신기술사",
+          "type": "자격증",
+          "requirement": "필수",
+          "status": "matched",
+          "ncs_codes": [
+            "2002010605_18v1",
+            "2002031710_13v1",
+            "2002020606_18v1",
+            "2002020608_18v1",
+            "2002031707_13v1"
+          ]
+        },
+        {
+          "name": "정보통신기술자 중급",
+          "type": "자격증",
+          "requirement": "우대",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "CAD",
+          "type": "기술",
+          "requirement": "우대",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "의료기관 및 대형 건축물 신축·공사 경력",
+          "type": "경력",
+          "requirement": "우대",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "통신 설비 유지관리 관련 법정 선임 또는 안전 관리 업무 경력",
+          "type": "경력",
+          "requirement": "우대",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        }
+      ]
+    },
+    {
+      "id": "JA-306747",
+      "has_extraction": true,
+      "competencies": []
+    },
+    {
+      "id": "JA-306758",
+      "has_extraction": true,
+      "competencies": [
+        {
+          "name": "정보처리기사",
+          "type": "자격증",
+          "requirement": "선택필수",
+          "status": "matched",
+          "ncs_codes": [
+            "2001020404_19v4",
+            "2001020405_19v4",
+            "2001020403_19v4",
+            "2001021107_19v2",
+            "2001060101_19v2"
+          ]
+        },
+        {
+          "name": "정보처리산업기사",
+          "type": "자격증",
+          "requirement": "선택필수",
+          "status": "matched",
+          "ncs_codes": [
+            "2001020404_19v4",
+            "2001020405_19v4",
+            "2001020403_19v4",
+            "2001021107_19v2",
+            "2001060111_19v3"
+          ]
+        },
+        {
+          "name": "정보통신기사",
+          "type": "자격증",
+          "requirement": "선택필수",
+          "status": "matched",
+          "ncs_codes": [
+            "2001090204_20v1",
+            "2002010305_22v3",
+            "2003030310_22v2",
+            "2002020606_18v1"
+          ]
+        },
+        {
+          "name": "정보통신산업기사",
+          "type": "자격증",
+          "requirement": "선택필수",
+          "status": "matched",
+          "ncs_codes": [
+            "2001090204_20v1",
+            "2003030310_22v2",
+            "2002010305_22v3",
+            "2001010605_19v2",
+            "2001020503_19v4"
+          ]
+        },
+        {
+          "name": "정보보안기사",
+          "type": "자격증",
+          "requirement": "선택필수",
+          "status": "matched",
+          "ncs_codes": [
+            "2002020606_18v1",
+            "2001060103_19v2",
+            "2001060101_19v2",
+            "2001060201_19v2",
+            "2001060111_19v3"
+          ]
+        },
+        {
+          "name": "정보시스템감리사",
+          "type": "자격증",
+          "requirement": "선택필수",
+          "status": "matched",
+          "ncs_codes": [
+            "2003030301_22v2",
+            "2001010212_19v4"
+          ]
+        },
+        {
+          "name": "전산 관련 경력 1년 이상",
+          "type": "경력",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "시각예술 관련학과",
+          "type": "전공",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "학사",
+          "type": "학력",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "큐레이터 관련 경력 1년 이상",
+          "type": "경력",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "미술관·미술공간 근무 및 전시·기획 경력",
+          "type": "직무지식",
+          "requirement": "우대",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "홍보 관련 경력 5년 이상",
+          "type": "경력",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "학예사",
+          "type": "자격증",
+          "requirement": "우대",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "홍보 관련학과",
+          "type": "전공",
+          "requirement": "우대",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "학사",
+          "type": "학력",
+          "requirement": "우대",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        }
+      ]
+    },
+    {
+      "id": "JA-306767",
+      "has_extraction": true,
+      "competencies": [
+        {
+          "name": "Excel",
+          "type": "기술",
+          "requirement": "필수",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "한글(HWP)",
+          "type": "기술",
+          "requirement": "필수",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "PC활용",
+          "type": "기술",
+          "requirement": "필수",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "공사 및 유지보수 관련 업무 경험",
+          "type": "직무지식",
+          "requirement": "우대",
+          "status": "no_candidate",
+          "ncs_codes": []
+        }
+      ]
+    },
+    {
+      "id": "JA-306789",
+      "has_extraction": true,
+      "competencies": [
+        {
+          "name": "한글",
+          "type": "기술",
+          "requirement": "우대",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "엑셀",
+          "type": "기술",
+          "requirement": "우대",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "산업보건지도사",
+          "type": "자격증",
+          "requirement": "선택필수",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "의사",
+          "type": "자격증",
+          "requirement": "선택필수",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "간호사",
+          "type": "자격증",
+          "requirement": "선택필수",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "산업위생관리산업기사",
+          "type": "자격증",
+          "requirement": "선택필수",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "대기환경산업기사",
+          "type": "자격증",
+          "requirement": "선택필수",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "인간공학기사",
+          "type": "자격증",
+          "requirement": "선택필수",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "산업보건",
+          "type": "전공",
+          "requirement": "선택필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "산업위생",
+          "type": "전공",
+          "requirement": "선택필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "직업상담사 1급",
+          "type": "자격증",
+          "requirement": "필수",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "직업상담사 2급",
+          "type": "자격증",
+          "requirement": "필수",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "청소년상담사 1급",
+          "type": "자격증",
+          "requirement": "필수",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "청소년상담사 2급",
+          "type": "자격증",
+          "requirement": "필수",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "청소년상담사 3급",
+          "type": "자격증",
+          "requirement": "필수",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "전문상담교사 1급",
+          "type": "자격증",
+          "requirement": "필수",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "전문상담교사 2급",
+          "type": "자격증",
+          "requirement": "필수",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "상담심리사 1급",
+          "type": "자격증",
+          "requirement": "필수",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "상담심리사 2급",
+          "type": "자격증",
+          "requirement": "필수",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "전문상담사 1급",
+          "type": "자격증",
+          "requirement": "필수",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "전문상담사 2급",
+          "type": "자격증",
+          "requirement": "필수",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "진로직업상담 경력",
+          "type": "경력",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "경영",
+          "type": "전공",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "인문",
+          "type": "전공",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "사회",
+          "type": "전공",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "심리",
+          "type": "전공",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "교육",
+          "type": "전공",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "통계",
+          "type": "전공",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "행정",
+          "type": "전공",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "학사학위",
+          "type": "학력",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "석사학위",
+          "type": "학력",
+          "requirement": "우대",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "사업지원 경력",
+          "type": "경력",
+          "requirement": "우대",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "경제학",
+          "type": "전공",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "노동경제학",
+          "type": "전공",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "공공정책학",
+          "type": "전공",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "사회학",
+          "type": "전공",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "행정학",
+          "type": "전공",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "통계패키지",
+          "type": "기술",
+          "requirement": "우대",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "경제",
+          "type": "전공",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "사회복지",
+          "type": "전공",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "컴퓨터공학",
+          "type": "전공",
+          "requirement": "선택필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "정보통신공학",
+          "type": "전공",
+          "requirement": "선택필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "소프트웨어공학",
+          "type": "전공",
+          "requirement": "선택필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "전자공학",
+          "type": "전공",
+          "requirement": "선택필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "빅데이터",
+          "type": "전공",
+          "requirement": "선택필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "AI",
+          "type": "전공",
+          "requirement": "선택필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "정보처리기사",
+          "type": "자격증",
+          "requirement": "선택필수",
+          "status": "matched",
+          "ncs_codes": [
+            "2001020404_19v4",
+            "2001020405_19v4",
+            "2001020403_19v4",
+            "2001021107_19v2",
+            "2001060101_19v2"
+          ]
+        },
+        {
+          "name": "정보보안기사",
+          "type": "자격증",
+          "requirement": "선택필수",
+          "status": "matched",
+          "ncs_codes": [
+            "2002020606_18v1",
+            "2001060103_19v2",
+            "2001060101_19v2",
+            "2001060201_19v2",
+            "2001060111_19v3"
+          ]
+        },
+        {
+          "name": "빅데이터분석기사",
+          "type": "자격증",
+          "requirement": "선택필수",
+          "status": "matched",
+          "ncs_codes": [
+            "2001021106_19v2",
+            "2001020903_19v2",
+            "2001010703_19v2",
+            "2001010506_19v3",
+            "2001020905_19v2"
+          ]
+        },
+        {
+          "name": "SQL",
+          "type": "기술",
+          "requirement": "우대",
+          "status": "matched",
+          "ncs_codes": [
+            "2001020415_19v1",
+            "2001020413_19v4"
+          ]
+        },
+        {
+          "name": "Oracle",
+          "type": "기술",
+          "requirement": "우대",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "정보화 경력",
+          "type": "경력",
+          "requirement": "우대",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "Java",
+          "type": "기술",
+          "requirement": "우대",
+          "status": "matched",
+          "ncs_codes": [
+            "2001020324_19v6",
+            "2001021006_19v2",
+            "2001020323_19v5",
+            "2001070106_23v2",
+            "2001070504_20v1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "JA-306794",
+      "has_extraction": true,
+      "competencies": [
+        {
+          "name": "운전면허",
+          "type": "기타",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "자기 차량 보유",
+          "type": "기타",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "관련 자격증",
+          "type": "자격증",
+          "requirement": "우대",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "ICT 분야 실무 경력",
+          "type": "경력",
+          "requirement": "우대",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        }
+      ]
+    },
+    {
+      "id": "JA-306806",
+      "has_extraction": true,
+      "competencies": [
+        {
+          "name": "OA설비 유지보수",
+          "type": "직무지식",
+          "requirement": "필수",
+          "status": "matched",
+          "ncs_codes": [
+            "2002031707_13v1",
+            "2002010416_21v1",
+            "2002020608_18v1",
+            "2002010509_17v1",
+            "2002031105_19v2"
+          ]
+        },
+        {
+          "name": "운전면허증",
+          "type": "기타",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "건설 기초안전교육",
+          "type": "기타",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "컴퓨터 관련 경력",
+          "type": "경력",
+          "requirement": "우대",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "통신 관련 경력",
+          "type": "경력",
+          "requirement": "우대",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "사무 관련 경력",
+          "type": "경력",
+          "requirement": "우대",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "통신관련 자격증",
+          "type": "자격증",
+          "requirement": "우대",
+          "status": "no_candidate",
+          "ncs_codes": []
+        }
+      ]
+    },
+    {
+      "id": "JA-306816",
+      "has_extraction": true,
+      "competencies": []
+    },
+    {
+      "id": "JA-306818",
+      "has_extraction": true,
+      "competencies": []
+    },
+    {
+      "id": "JA-306839",
+      "has_extraction": true,
+      "competencies": [
+        {
+          "name": "전기·통신 분야 관련 업무",
+          "type": "직무지식",
+          "requirement": "필수",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "운전면허(1종보통 이상)",
+          "type": "기타",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "고소작업차량 운전",
+          "type": "기술",
+          "requirement": "필수",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "건설업 기초 안전보건교육",
+          "type": "기타",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "배전 또는 통신분야 경력",
+          "type": "경력",
+          "requirement": "우대",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "전기 또는 통신관련 자격증",
+          "type": "자격증",
+          "requirement": "우대",
+          "status": "no_candidate",
+          "ncs_codes": []
+        }
+      ]
+    },
+    {
+      "id": "JA-306841",
+      "has_extraction": true,
+      "competencies": [
+        {
+          "name": "한국어능력시험(TOPIK)",
+          "type": "어학",
+          "requirement": "선택필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "한국사능력검정",
+          "type": "자격증",
+          "requirement": "우대",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "국어능력인증",
+          "type": "자격증",
+          "requirement": "우대",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "컴퓨터활용능력",
+          "type": "자격증",
+          "requirement": "우대",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "사회조사분석사",
+          "type": "자격증",
+          "requirement": "우대",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "정보처리",
+          "type": "자격증",
+          "requirement": "우대",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "정보보안기사",
+          "type": "자격증",
+          "requirement": "우대",
+          "status": "matched",
+          "ncs_codes": [
+            "2002020606_18v1",
+            "2001060103_19v2",
+            "2001060101_19v2",
+            "2001060201_19v2",
+            "2001060111_19v3"
+          ]
+        },
+        {
+          "name": "OCP",
+          "type": "자격증",
+          "requirement": "우대",
+          "status": "query_unavailable",
+          "ncs_codes": []
+        },
+        {
+          "name": "PMP",
+          "type": "자격증",
+          "requirement": "우대",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "공공기관 정보화사업 운영 경력",
+          "type": "경력",
+          "requirement": "우대",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "가정폭력전문상담원 양성교육 100시간 수료",
+          "type": "기타",
+          "requirement": "우대",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        }
+      ]
+    },
+    {
+      "id": "JA-306888",
+      "has_extraction": true,
+      "competencies": [
+        {
+          "name": "보안관제 기술자격 (초급 이상, 중급 이하)",
+          "type": "자격증",
+          "requirement": "필수",
+          "status": "no_candidate",
+          "ncs_codes": []
+        }
+      ]
+    },
+    {
+      "id": "JA-306912",
+      "has_extraction": true,
+      "competencies": [
+        {
+          "name": "박사학위",
+          "type": "학력",
+          "requirement": "선택필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "석사학위",
+          "type": "학력",
+          "requirement": "선택필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "학사학위",
+          "type": "학력",
+          "requirement": "선택필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "고등학교 졸업",
+          "type": "학력",
+          "requirement": "선택필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "정보화(IT) 분야 실무경력",
+          "type": "경력",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "데이터 분야 실무경력",
+          "type": "경력",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "AI 분야 실무경력",
+          "type": "경력",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "클라우드 분야 실무경력",
+          "type": "경력",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "정보시스템 구축·연구·사업관리",
+          "type": "직무지식",
+          "requirement": "필수",
+          "status": "matched",
+          "ncs_codes": [
+            "2003030301_22v2",
+            "2003030103_23v3",
+            "2003030314_22v3",
+            "2002031305_13v1",
+            "2003030315_22v3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "JA-306913",
+      "has_extraction": true,
+      "competencies": []
+    },
+    {
+      "id": "JA-306964",
+      "has_extraction": true,
+      "competencies": [
+        {
+          "name": "자동차 운전면허증(1종 보통 이상)",
+          "type": "기타",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "건설업 기초 안전보건교육",
+          "type": "기타",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "배전전기원",
+          "type": "자격증",
+          "requirement": "우대",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "전기기능사",
+          "type": "자격증",
+          "requirement": "우대",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "통신기능사",
+          "type": "자격증",
+          "requirement": "우대",
+          "status": "no_candidate",
+          "ncs_codes": []
+        }
+      ]
+    },
+    {
+      "id": "JA-306966",
+      "has_extraction": true,
+      "competencies": [
+        {
+          "name": "자동차 운전면허증(1종 보통 이상)",
+          "type": "기타",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "건설업 기초 안전보건교육",
+          "type": "기타",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "배전전기원",
+          "type": "자격증",
+          "requirement": "우대",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "전기기능사",
+          "type": "자격증",
+          "requirement": "우대",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "통신기능사",
+          "type": "자격증",
+          "requirement": "우대",
+          "status": "no_candidate",
+          "ncs_codes": []
+        }
+      ]
+    },
+    {
+      "id": "JA-306979",
+      "has_extraction": true,
+      "competencies": [
+        {
+          "name": "경제학",
+          "type": "전공",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "법학",
+          "type": "전공",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "정책학",
+          "type": "전공",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "행정학",
+          "type": "전공",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "정보통신기사",
+          "type": "자격증",
+          "requirement": "선택필수",
+          "status": "matched",
+          "ncs_codes": [
+            "2001090204_20v1",
+            "2002010305_22v3",
+            "2003030310_22v2",
+            "2002020606_18v1"
+          ]
+        },
+        {
+          "name": "정보보안기사",
+          "type": "자격증",
+          "requirement": "선택필수",
+          "status": "matched",
+          "ncs_codes": [
+            "2002020606_18v1",
+            "2001060103_19v2",
+            "2001060101_19v2",
+            "2001060201_19v2",
+            "2001060111_19v3"
+          ]
+        },
+        {
+          "name": "정보통신산업기사",
+          "type": "자격증",
+          "requirement": "선택필수",
+          "status": "matched",
+          "ncs_codes": [
+            "2001090204_20v1",
+            "2003030310_22v2",
+            "2002010305_22v3",
+            "2001010605_19v2",
+            "2001020503_19v4"
+          ]
+        },
+        {
+          "name": "정보보안산업기사",
+          "type": "자격증",
+          "requirement": "선택필수",
+          "status": "matched",
+          "ncs_codes": [
+            "2002020606_18v1",
+            "2001060103_19v2",
+            "2001060101_19v2",
+            "2001060201_19v2",
+            "2001060106_19v2"
+          ]
+        },
+        {
+          "name": "사무자동화기사",
+          "type": "자격증",
+          "requirement": "선택필수",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "사무자동화산업기사",
+          "type": "자격증",
+          "requirement": "선택필수",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "정보처리기사",
+          "type": "자격증",
+          "requirement": "선택필수",
+          "status": "matched",
+          "ncs_codes": [
+            "2001020404_19v4",
+            "2001020405_19v4",
+            "2001020403_19v4",
+            "2001021107_19v2",
+            "2001060101_19v2"
+          ]
+        },
+        {
+          "name": "정보처리산업기사",
+          "type": "자격증",
+          "requirement": "선택필수",
+          "status": "matched",
+          "ncs_codes": [
+            "2001020404_19v4",
+            "2001020405_19v4",
+            "2001020403_19v4",
+            "2001021107_19v2",
+            "2001060111_19v3"
+          ]
+        },
+        {
+          "name": "CISA",
+          "type": "자격증",
+          "requirement": "선택필수",
+          "status": "matched",
+          "ncs_codes": [
+            "2003030301_22v2",
+            "2001010208_19v4",
+            "2001060103_19v2",
+            "2001010211_19v4",
+            "2002020606_18v1"
+          ]
+        },
+        {
+          "name": "CISSP",
+          "type": "자격증",
+          "requirement": "선택필수",
+          "status": "matched",
+          "ncs_codes": [
+            "2001060103_19v2",
+            "2001060111_19v3",
+            "2002020606_18v1",
+            "2001060201_19v2",
+            "2001060901_21v1"
+          ]
+        },
+        {
+          "name": "정보화 관련 업무",
+          "type": "직무지식",
+          "requirement": "선택필수",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "경력",
+          "type": "경력",
+          "requirement": "선택필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "가맹거래사",
+          "type": "자격증",
+          "requirement": "필수",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "석사",
+          "type": "학력",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "박사",
+          "type": "학력",
+          "requirement": "우대",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "변호사",
+          "type": "자격증",
+          "requirement": "우대",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "AI챔피언 인증",
+          "type": "자격증",
+          "requirement": "우대",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "AICE Associate",
+          "type": "자격증",
+          "requirement": "우대",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "데이터분석전문가",
+          "type": "자격증",
+          "requirement": "우대",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "빅데이터분석기사",
+          "type": "자격증",
+          "requirement": "우대",
+          "status": "matched",
+          "ncs_codes": [
+            "2001021106_19v2",
+            "2001020903_19v2",
+            "2001010703_19v2",
+            "2001010506_19v3",
+            "2001020905_19v2"
+          ]
+        },
+        {
+          "name": "컴퓨터활용능력",
+          "type": "자격증",
+          "requirement": "우대",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "MOS",
+          "type": "자격증",
+          "requirement": "우대",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "ITQ",
+          "type": "자격증",
+          "requirement": "우대",
+          "status": "no_candidate",
+          "ncs_codes": []
+        }
+      ]
+    },
+    {
+      "id": "JA-306985",
+      "has_extraction": true,
+      "competencies": [
+        {
+          "name": "건설업 기초 안전보건교육",
+          "type": "기타",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        }
+      ]
+    },
+    {
+      "id": "JA-306987",
+      "has_extraction": true,
+      "competencies": [
+        {
+          "name": "Kubernetes",
+          "type": "기술",
+          "requirement": "우대",
+          "status": "matched",
+          "ncs_codes": [
+            "2001030406_19v2"
+          ]
+        },
+        {
+          "name": "Docker",
+          "type": "기술",
+          "requirement": "우대",
+          "status": "matched",
+          "ncs_codes": [
+            "2001020322_19v6"
+          ]
+        },
+        {
+          "name": "CI/CD",
+          "type": "기술",
+          "requirement": "우대",
+          "status": "matched",
+          "ncs_codes": [
+            "2001040302_19v4",
+            "2001040320_21v5",
+            "2001040310_21v5"
+          ]
+        },
+        {
+          "name": "MSA",
+          "type": "기술",
+          "requirement": "우대",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "MySQL",
+          "type": "기술",
+          "requirement": "우대",
+          "status": "matched",
+          "ncs_codes": [
+            "2001020405_19v4",
+            "2001020404_19v4",
+            "2001020412_19v4",
+            "2001021107_19v2",
+            "2001020403_19v4"
+          ]
+        },
+        {
+          "name": "MongoDB",
+          "type": "기술",
+          "requirement": "우대",
+          "status": "matched",
+          "ncs_codes": [
+            "2001020412_19v4",
+            "2001020404_19v4",
+            "2001020411_19v4",
+            "2001020405_19v4",
+            "2001021107_19v2"
+          ]
+        },
+        {
+          "name": "SQL 튜닝",
+          "type": "직무지식",
+          "requirement": "우대",
+          "status": "matched",
+          "ncs_codes": [
+            "2001020413_19v4",
+            "2001020415_19v1",
+            "2001020414_19v4",
+            "2001020412_19v4",
+            "2001020411_19v4"
+          ]
+        },
+        {
+          "name": "Spring Boot",
+          "type": "기술",
+          "requirement": "우대",
+          "status": "matched",
+          "ncs_codes": [
+            "2001021205_19v1",
+            "2001021304_19v1"
+          ]
+        },
+        {
+          "name": "Java",
+          "type": "기술",
+          "requirement": "우대",
+          "status": "matched",
+          "ncs_codes": [
+            "2001020324_19v6",
+            "2001021006_19v2",
+            "2001020323_19v5",
+            "2001070106_23v2",
+            "2001070504_20v1"
+          ]
+        },
+        {
+          "name": "React.js",
+          "type": "기술",
+          "requirement": "우대",
+          "status": "matched",
+          "ncs_codes": [
+            "2001021006_19v2",
+            "2001070506_20v1"
+          ]
+        },
+        {
+          "name": "SW 개발 또는 운영 경력 7년 이상",
+          "type": "경력",
+          "requirement": "우대",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "관련 직무 경험 및 경력",
+          "type": "경력",
+          "requirement": "우대",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        }
+      ]
+    },
+    {
+      "id": "JA-306990",
+      "has_extraction": true,
+      "competencies": [
+        {
+          "name": "TOEIC",
+          "type": "어학",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "TOEFL",
+          "type": "어학",
+          "requirement": "선택필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "TEPS",
+          "type": "어학",
+          "requirement": "선택필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "TOEIC Speaking",
+          "type": "어학",
+          "requirement": "선택필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "G-TELP",
+          "type": "어학",
+          "requirement": "선택필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "OPIc",
+          "type": "어학",
+          "requirement": "선택필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        }
+      ]
+    },
+    {
+      "id": "JA-306995",
+      "has_extraction": true,
+      "competencies": [
+        {
+          "name": "대졸(4년) 이상",
+          "type": "학력",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        }
+      ]
+    },
+    {
+      "id": "JA-306997",
+      "has_extraction": true,
+      "competencies": [
+        {
+          "name": "건설업 기초 안전보건교육",
+          "type": "기타",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "운전면허(1종보통)",
+          "type": "기타",
+          "requirement": "우대",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "1.2톤 고소작업차 운행",
+          "type": "기타",
+          "requirement": "우대",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "전기·통신·배전자동화 현장업무",
+          "type": "직무지식",
+          "requirement": "우대",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "엑셀",
+          "type": "기술",
+          "requirement": "우대",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "한글",
+          "type": "기술",
+          "requirement": "우대",
+          "status": "no_candidate",
+          "ncs_codes": []
+        }
+      ]
+    },
+    {
+      "id": "JA-307006",
+      "has_extraction": true,
+      "competencies": [
+        {
+          "name": "관세행정",
+          "type": "직무지식",
+          "requirement": "선택필수",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "관세정보시스템 운영·유지관리",
+          "type": "직무지식",
+          "requirement": "선택필수",
+          "status": "matched",
+          "ncs_codes": [
+            "2003030306_13v1",
+            "2001060906_21v1",
+            "2003030303_13v1",
+            "2003030508_23v3",
+            "2003030307_13v1"
+          ]
+        },
+        {
+          "name": "정보시스템 운영·유지관리",
+          "type": "직무지식",
+          "requirement": "선택필수",
+          "status": "matched",
+          "ncs_codes": [
+            "2003030301_22v2",
+            "2001060906_21v1",
+            "2001010307_19v4",
+            "2002031314_19v2",
+            "2003030306_13v1"
+          ]
+        },
+        {
+          "name": "IT컨설팅",
+          "type": "직무지식",
+          "requirement": "선택필수",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "응용SW엔지니어링",
+          "type": "직무지식",
+          "requirement": "선택필수",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "경력 25년 이상",
+          "type": "경력",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        }
+      ]
+    },
+    {
+      "id": "JA-307027",
+      "has_extraction": true,
+      "competencies": []
+    },
+    {
+      "id": "JA-307033",
+      "has_extraction": true,
+      "competencies": [
+        {
+          "name": "정보처리기사",
+          "type": "자격증",
+          "requirement": "필수",
+          "status": "matched",
+          "ncs_codes": [
+            "2001020404_19v4",
+            "2001020405_19v4",
+            "2001020403_19v4",
+            "2001021107_19v2",
+            "2001060101_19v2"
+          ]
+        },
+        {
+          "name": "전자정부프레임워크",
+          "type": "기술",
+          "requirement": "우대",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "Java",
+          "type": "기술",
+          "requirement": "우대",
+          "status": "matched",
+          "ncs_codes": [
+            "2001020324_19v6",
+            "2001021006_19v2",
+            "2001020323_19v5",
+            "2001070106_23v2",
+            "2001070504_20v1"
+          ]
+        },
+        {
+          "name": "JSP",
+          "type": "기술",
+          "requirement": "우대",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "Oracle",
+          "type": "기술",
+          "requirement": "우대",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "Oracle 관련 자격증",
+          "type": "자격증",
+          "requirement": "우대",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "IT 전문교육과정",
+          "type": "기타",
+          "requirement": "우대",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "전문스포츠지도사 2급",
+          "type": "자격증",
+          "requirement": "선택필수",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "생활스포츠지도사 2급",
+          "type": "자격증",
+          "requirement": "선택필수",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "말조련사",
+          "type": "자격증",
+          "requirement": "선택필수",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "재활승마지도사",
+          "type": "자격증",
+          "requirement": "선택필수",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "승마교관 경력",
+          "type": "직무지식",
+          "requirement": "필수",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "승마교육 경력",
+          "type": "직무지식",
+          "requirement": "필수",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "사무보조 업무 경력",
+          "type": "직무지식",
+          "requirement": "우대",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "한글",
+          "type": "기술",
+          "requirement": "우대",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "MS Office",
+          "type": "기술",
+          "requirement": "우대",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "방송 아나운서 경력",
+          "type": "직무지식",
+          "requirement": "필수",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "스포츠 중계 경력",
+          "type": "직무지식",
+          "requirement": "우대",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "경주마관리 경력",
+          "type": "직무지식",
+          "requirement": "필수",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "TRP",
+          "type": "자격증",
+          "requirement": "우대",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "말조련사",
+          "type": "자격증",
+          "requirement": "우대",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "경찰 수사 업무 경력",
+          "type": "직무지식",
+          "requirement": "필수",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "1종 보통 운전면허",
+          "type": "자격증",
+          "requirement": "필수",
+          "status": "no_candidate",
+          "ncs_codes": []
+        }
+      ]
+    },
+    {
+      "id": "JA-307067",
+      "has_extraction": true,
+      "competencies": []
+    },
+    {
+      "id": "JA-307071",
+      "has_extraction": true,
+      "competencies": [
+        {
+          "name": "건설업 기초 안전보건교육",
+          "type": "기타",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "전기·통신공사 현장 실무 경력",
+          "type": "경력",
+          "requirement": "우대",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "전기·통신분야 관련 자격증",
+          "type": "자격증",
+          "requirement": "우대",
+          "status": "no_candidate",
+          "ncs_codes": []
+        }
+      ]
+    },
+    {
+      "id": "JA-307106",
+      "has_extraction": true,
+      "competencies": [
+        {
+          "name": "건설기술 관련학과",
+          "type": "전공",
+          "requirement": "우대",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        }
+      ]
+    },
+    {
+      "id": "JA-307111",
+      "has_extraction": true,
+      "competencies": [
+        {
+          "name": "정보관리기술사",
+          "type": "자격증",
+          "requirement": "선택필수",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "컴퓨터시스템응용기술사",
+          "type": "자격증",
+          "requirement": "선택필수",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "관련 경력 3년 이상",
+          "type": "경력",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "정보시스템 개발 관리",
+          "type": "직무지식",
+          "requirement": "선택필수",
+          "status": "matched",
+          "ncs_codes": [
+            "2003030301_22v2",
+            "2001010208_19v4",
+            "2003030315_22v3",
+            "2003030314_22v3",
+            "2001010212_19v4"
+          ]
+        },
+        {
+          "name": "관련 경력 10년 이상",
+          "type": "경력",
+          "requirement": "선택필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "관련 경력 5년 이상",
+          "type": "경력",
+          "requirement": "선택필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "정보보호",
+          "type": "직무지식",
+          "requirement": "필수",
+          "status": "matched",
+          "ncs_codes": [
+            "2001060101_19v2",
+            "2001060103_19v2",
+            "2001061201_23v1",
+            "2001110102_23v2",
+            "2001110105_23v2"
+          ]
+        },
+        {
+          "name": "개인정보보호 관리",
+          "type": "직무지식",
+          "requirement": "필수",
+          "status": "matched",
+          "ncs_codes": [
+            "2001110102_23v2",
+            "2001110105_23v2",
+            "2001110104_23v2",
+            "2001060107_18v2",
+            "2001060104_16v1"
+          ]
+        },
+        {
+          "name": "관련 경력 5년 이상",
+          "type": "경력",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        }
+      ]
+    },
+    {
+      "id": "JA-307114",
+      "has_extraction": true,
+      "competencies": [
+        {
+          "name": "항공학",
+          "type": "전공",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "전기·전자공학",
+          "type": "전공",
+          "requirement": "선택필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "컴퓨터공학",
+          "type": "전공",
+          "requirement": "선택필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "정보통신공학",
+          "type": "전공",
+          "requirement": "선택필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "학사",
+          "type": "학력",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        }
+      ]
+    },
+    {
+      "id": "JA-307120",
+      "has_extraction": true,
+      "competencies": [
+        {
+          "name": "전산",
+          "type": "전공",
+          "requirement": "선택필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "정보보호",
+          "type": "전공",
+          "requirement": "선택필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "CISA",
+          "type": "자격증",
+          "requirement": "선택필수",
+          "status": "matched",
+          "ncs_codes": [
+            "2003030301_22v2",
+            "2001010208_19v4",
+            "2001060103_19v2",
+            "2001010211_19v4",
+            "2002020606_18v1"
+          ]
+        },
+        {
+          "name": "CISSP",
+          "type": "자격증",
+          "requirement": "선택필수",
+          "status": "matched",
+          "ncs_codes": [
+            "2001060103_19v2",
+            "2001060111_19v3",
+            "2002020606_18v1",
+            "2001060201_19v2",
+            "2001060901_21v1"
+          ]
+        },
+        {
+          "name": "정보보안기사",
+          "type": "자격증",
+          "requirement": "선택필수",
+          "status": "matched",
+          "ncs_codes": [
+            "2002020606_18v1",
+            "2001060103_19v2",
+            "2001060101_19v2",
+            "2001060201_19v2",
+            "2001060111_19v3"
+          ]
+        },
+        {
+          "name": "정보보안산업기사",
+          "type": "자격증",
+          "requirement": "선택필수",
+          "status": "matched",
+          "ncs_codes": [
+            "2002020606_18v1",
+            "2001060103_19v2",
+            "2001060101_19v2",
+            "2001060201_19v2",
+            "2001060106_19v2"
+          ]
+        },
+        {
+          "name": "개인정보관리사",
+          "type": "자격증",
+          "requirement": "선택필수",
+          "status": "matched",
+          "ncs_codes": [
+            "2001110104_23v2",
+            "2001110110_23v1"
+          ]
+        },
+        {
+          "name": "전문학사 이상",
+          "type": "학력",
+          "requirement": "선택필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        }
+      ]
+    },
+    {
+      "id": "JA-307122",
+      "has_extraction": true,
+      "competencies": [
+        {
+          "name": "건설업 기초 안전보건교육",
+          "type": "기타",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "운전면허(1,2종보통)",
+          "type": "기타",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "1.2톤 고소작업차 운행",
+          "type": "기술",
+          "requirement": "필수",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "배전분야 경력",
+          "type": "경력",
+          "requirement": "우대",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        }
+      ]
+    },
+    {
+      "id": "JA-307196",
+      "has_extraction": true,
+      "competencies": [
+        {
+          "name": "응용소프트웨어공학",
+          "type": "전공",
+          "requirement": "선택필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "전산학",
+          "type": "전공",
+          "requirement": "선택필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "컴퓨터공학",
+          "type": "전공",
+          "requirement": "선택필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "정보통신공학",
+          "type": "전공",
+          "requirement": "선택필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "인공지능공학",
+          "type": "전공",
+          "requirement": "선택필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "박사",
+          "type": "학력",
+          "requirement": "선택필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "석사",
+          "type": "학력",
+          "requirement": "선택필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "학사",
+          "type": "학력",
+          "requirement": "선택필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "빅데이터 분석",
+          "type": "직무지식",
+          "requirement": "선택필수",
+          "status": "matched",
+          "ncs_codes": [
+            "2001010703_19v2",
+            "2001010514_21v1",
+            "2001010513_21v1",
+            "2001010515_21v1",
+            "2001030404_19v2"
+          ]
+        },
+        {
+          "name": "AI 학습데이터 구축",
+          "type": "직무지식",
+          "requirement": "선택필수",
+          "status": "matched",
+          "ncs_codes": [
+            "2001070601_22v1",
+            "2001070605_22v1",
+            "2001070609_22v1",
+            "2001070602_22v1",
+            "2001070604_22v1"
+          ]
+        },
+        {
+          "name": "AI모델 학습",
+          "type": "직무지식",
+          "requirement": "선택필수",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "관련 경력 3년 이상",
+          "type": "경력",
+          "requirement": "선택필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "관련 경력 6년 이상",
+          "type": "경력",
+          "requirement": "선택필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        }
+      ]
+    },
+    {
+      "id": "JA-307199",
+      "has_extraction": true,
+      "competencies": []
+    },
+    {
+      "id": "JA-307211",
+      "has_extraction": true,
+      "competencies": []
+    },
+    {
+      "id": "JA-307226",
+      "has_extraction": true,
+      "competencies": [
+        {
+          "name": "AMI통신망 시설공사",
+          "type": "직무지식",
+          "requirement": "필수",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "운전면허증",
+          "type": "기타",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "1종 보통 운전면허",
+          "type": "기타",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "화물 차량 운전",
+          "type": "기술",
+          "requirement": "필수",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "해당분야 경력",
+          "type": "경력",
+          "requirement": "우대",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        }
+      ]
+    },
+    {
+      "id": "JA-307232",
+      "has_extraction": true,
+      "competencies": [
+        {
+          "name": "건설기술 관련학과",
+          "type": "전공",
+          "requirement": "우대",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        }
+      ]
+    },
+    {
+      "id": "JA-307238",
+      "has_extraction": true,
+      "competencies": [
+        {
+          "name": "학사",
+          "type": "학력",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "기본 어학 역량",
+          "type": "어학",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "원자로조종사면허",
+          "type": "자격증",
+          "requirement": "선택필수",
+          "status": "no_candidate",
+          "ncs_codes": []
+        },
+        {
+          "name": "원자로조종감독자면허",
+          "type": "자격증",
+          "requirement": "선택필수",
+          "status": "no_candidate",
+          "ncs_codes": []
+        }
+      ]
+    },
+    {
+      "id": "JA-307240",
+      "has_extraction": true,
+      "competencies": [
+        {
+          "name": "학사",
+          "type": "학력",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        },
+        {
+          "name": "기본 어학 역량",
+          "type": "어학",
+          "requirement": "필수",
+          "status": "outside_ncs_scope",
+          "ncs_codes": []
+        }
+      ]
+    },
+    {
+      "id": "JA-307243",
+      "has_extraction": true,
+      "competencies": []
+    }
+  ]
+}

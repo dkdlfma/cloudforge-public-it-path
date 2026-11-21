@@ -1,0 +1,126 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Private Seoul network for team04-kang PostgreSQL and its authorized clients.
+
+Metadata:
+  AWSToolsMetrics:
+    AWSAgentToolkit: aws-cloudformation@3
+
+Resources:
+  TeamVpc:
+    Type: AWS::EC2::VPC
+    Metadata:
+      com.aws.cloudformation.Context:
+        why: Gives the team an isolated network for its RDS instance and clients.
+        must:
+          - Enable both VPC DNS settings for database endpoint resolution.
+          - Keep the RDS network private.
+    Properties:
+      CidrBlock: 10.204.0.0/24
+      EnableDnsSupport: true
+      EnableDnsHostnames: true
+      Tags:
+        - {Key: Name, Value: team04-kang-rds-vpc}
+        - {Key: Team, Value: team04-kang}
+        - {Key: Project, Value: aws_edu}
+
+  PrivateSubnetA:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref TeamVpc
+      AvailabilityZone: ap-northeast-2a
+      CidrBlock: 10.204.0.0/26
+      MapPublicIpOnLaunch: false
+      Tags:
+        - {Key: Name, Value: team04-kang-rds-private-a}
+        - {Key: Team, Value: team04-kang}
+        - {Key: Project, Value: aws_edu}
+
+  PrivateSubnetB:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref TeamVpc
+      AvailabilityZone: ap-northeast-2c
+      CidrBlock: 10.204.0.64/26
+      MapPublicIpOnLaunch: false
+      Tags:
+        - {Key: Name, Value: team04-kang-rds-private-c}
+        - {Key: Team, Value: team04-kang}
+        - {Key: Project, Value: aws_edu}
+
+  PrivateRouteTable:
+    Type: AWS::EC2::RouteTable
+    Metadata:
+      com.aws.cloudformation.Context:
+        why: Gives both database subnets explicit local routing independent of the VPC main route table.
+        must:
+          - Preserve private routing for the database.
+    Properties:
+      VpcId: !Ref TeamVpc
+      Tags:
+        - {Key: Name, Value: team04-kang-rds-private-routes}
+        - {Key: Team, Value: team04-kang}
+        - {Key: Project, Value: aws_edu}
+
+  PrivateRouteA:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId: !Ref PrivateSubnetA
+      RouteTableId: !Ref PrivateRouteTable
+
+  PrivateRouteB:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId: !Ref PrivateSubnetB
+      RouteTableId: !Ref PrivateRouteTable
+
+  ClientSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Metadata:
+      com.aws.cloudformation.Context:
+        why: Identifies the approved loader and recommendation runtime at the database firewall.
+        must:
+          - Attach only to authorized team workloads requiring database access.
+    Properties:
+      GroupDescription: Client group for team04-kang PostgreSQL access.
+      VpcId: !Ref TeamVpc
+      Tags:
+        - {Key: Name, Value: team04-kang-rds-client-sg}
+        - {Key: Team, Value: team04-kang}
+        - {Key: Project, Value: aws_edu}
+
+  RdsSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Metadata:
+      com.aws.cloudformation.Context:
+        why: Restricts database access to workloads with the team client security group.
+        must:
+          - Allow PostgreSQL ingress only from the team client security group.
+    Properties:
+      GroupDescription: PostgreSQL inbound access from team04-kang clients.
+      VpcId: !Ref TeamVpc
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 5432
+          ToPort: 5432
+          SourceSecurityGroupId: !Ref ClientSecurityGroup
+      Tags:
+        - {Key: Name, Value: team04-kang-rds-db-sg}
+        - {Key: Team, Value: team04-kang}
+        - {Key: Project, Value: aws_edu}
+
+Outputs:
+  VpcId:
+    Description: Team VPC ID.
+    Value: !Ref TeamVpc
+  PrivateSubnetA:
+    Description: Private subnet in ap-northeast-2a.
+    Value: !Ref PrivateSubnetA
+  PrivateSubnetB:
+    Description: Private subnet in ap-northeast-2c.
+    Value: !Ref PrivateSubnetB
+  RdsSecurityGroupId:
+    Description: Security group assigned to the RDS DB instance.
+    Value: !Ref RdsSecurityGroup
+  ClientSecurityGroupId:
+    Description: Security group for approved application and loader workloads.
+    Value: !Ref ClientSecurityGroup

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8"><title>aws_edu 아키텍처</title>
+<style>
+  :root{--ink:#1f2933;--sub:#52606d;--line:#cbd2d9;--bg:#f5f7fa;--aws:#ff9900;--navy:#232f3e;
+        --c1:#e8f4fd;--b1:#2f80c0;--c2:#fff4e5;--b2:#d9822b;--c3:#eaf7ee;--b3:#2f9e5b;--c4:#f3eefc;--b4:#7c5cc4;--c5:#f2f3f5;--b5:#7b8794}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Noto Sans CJK KR","Noto Sans KR",sans-serif;color:var(--ink);background:#fff;width:1600px;padding:36px 44px}
+  h1{font-size:30px;font-weight:800;letter-spacing:-.5px}
+  .lead{color:var(--sub);font-size:16px;margin:6px 0 22px}
+  .grid{display:grid;grid-template-columns:210px 1fr;gap:14px 18px;align-items:stretch}
+  .lane{border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;justify-content:center;font-weight:800;font-size:17px}
+  .lane small{font-weight:500;font-size:13px;color:var(--sub);margin-top:4px;line-height:1.4}
+  .row{display:flex;gap:12px;align-items:center;border-radius:12px;padding:14px;border:1.5px dashed var(--line)}
+  .box{background:#fff;border:2px solid var(--line);border-radius:10px;padding:10px 12px;min-width:150px;flex:1}
+  .box b{display:block;font-size:15.5px}
+  .box span{display:block;font-size:12.5px;color:var(--sub);margin-top:3px;line-height:1.35}
+  .tag{display:inline-block;font-size:11px;font-weight:700;border-radius:4px;padding:1px 6px;margin-top:5px;color:#fff;background:var(--navy)}
+  .box span.tag{display:inline-block;width:auto;color:#fff}
+  .box span.who,.who{font-size:11px;color:var(--sub);font-weight:600;text-align:right;margin-top:2px}
+  .sfn .t .who{float:right}
+  .arr{font-size:22px;color:var(--b5);flex:0 0 auto}
+  .l1{background:var(--c1);color:var(--b1)} .r1{background:var(--c1)} .r1 .box{border-color:#9cc7ea}
+  .l2{background:var(--c2);color:var(--b2)} .r2{background:var(--c2)} .r2 .box{border-color:#f0bd85}
+  .l3{background:var(--c3);color:var(--b3)} .r3{background:var(--c3)} .r3 .box{border-color:#97d3ad}
+  .l4{background:var(--c4);color:var(--b4)} .r4{background:var(--c4)} .r4 .box{border-color:#c1aee8}
+  .l5{background:var(--c5);color:var(--b5)} .r5{background:var(--c5)} .r5 .box{border-color:#cbd2d9}
+  .sfn{flex:6;background:#fff;border:2px solid #f0bd85;border-radius:10px;padding:10px 12px}
+  .sfn .t{font-weight:800;font-size:15.5px;margin-bottom:8px}
+  .steps{display:flex;align-items:center;gap:6px}
+  .st{flex:1;border:1.5px solid #f3d2ad;background:#fffaf3;border-radius:8px;padding:7px 8px;font-size:12.5px;line-height:1.3}
+  .st b{font-size:13.5px;display:block}
+  .opt{border-style:dashed}
+  .foot{display:flex;gap:26px;margin-top:18px;font-size:13px;color:var(--sub)}
+  .foot i{font-style:normal;display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+</style></head><body>
+<h1>AWS 클라우드 기반 공공기관 IT 직무 역량 분석 · 학습경로 추천 에이전트</h1>
+<p class="lead">잡알리오 진행 중 공고 → Bedrock 역량 추출 → NCS 매칭 · 수요 분석 → 사용자 프로필 기반 근거 있는 학습경로 (팀 team04-kang · 서울 리전 ap-northeast-2)</p>
+
+<div class="grid">
+  <div class="lane l1">① 사용자 · 인증<small>취업 준비생이 로그인 후<br>보유 역량을 입력</small></div>
+  <div class="row r1">
+    <div class="box"><b>취업 준비생</b><span>보유 자격증 · 기술 스택 · 이수 교육 · 경력 · 관심 분야 입력</span></div>
+    <div class="arr">→</div>
+    <div class="box"><b>Streamlit 화면</b><span>공고 분석 · 내 학습경로 · AI 상담 (3탭)</span><span class="who">김현진</span></div>
+    <div class="arr">→</div>
+    <div class="box"><b>Amazon Cognito</b><span>사용자 풀 · 로그인 → ID 토큰(JWT) 발급<br>관리자만 계정 생성</span><span class="tag">인증</span><span class="who">강민경</span></div>
+    <div class="arr">→</div>
+    <div class="box"><b>API Gateway (HTTP API)</b><span>JWT 인증 · 호출 제한<br>GET /postings · POST /recommend</span><span class="tag">API 진입점</span><span class="who">강민경</span></div>
+  </div>
+
+  <div class="lane l3">② AI 추천 · 에이전트<small>코드가 계산, AI는 이해·설명</small></div>
+  <div class="row r3">
+    <div class="box"><b>추천 Lambda</b><span>공고 1건 + 프로필 → 판정 · 추천 자격증 · 주 단위 학습경로<br>요건별 충족/미충족 + 공고 근거 문장</span><span class="who">강민경 · 김현진</span></div>
+    <div class="arr">⇄</div>
+    <div class="box"><b>Bedrock AgentCore Runtime</b><span>추천 상담 에이전트 (Claude 도구 호출)<br>요구사항 조회 · 학습경로 계산 · 계획 저장</span><span class="tag">Agent</span><span class="who">김현진</span></div>
+    <div class="arr">⇄</div>
+    <div class="box"><b>Amazon Bedrock</b><span>Claude Haiku 4.5 — 역량 추출 · 상담 답변<br>Titan Embeddings V2 — 의미 매칭</span><span class="tag">AI</span></div>
+    <div class="arr">+</div>
+    <div class="box"><b>가드레일</b><span>블라인드 채용 위반 질문 · 합격 보장 · 프롬프트 공격 차단, 개인정보 가리기</span><span class="who">김현진</span></div>
+  </div>
+
+  <div class="lane l2">③ 데이터 처리 자동화<small>EventBridge 매일 03:00 (KST)<br>→ Step Functions</small></div>
+  <div class="row r2">
+    <div class="box" style="flex:1.1"><b>Amazon EventBridge</b><span>매일 한 번 파이프라인 실행</span></div>
+    <div class="arr">→</div>
+    <div class="sfn">
+      <div class="t">AWS Step Functions — aws-edu-team04-kang-pipeline <span class="who">강민경</span></div>
+      <div class="steps">
+        <div class="st"><b>수집 Lambda</b>잡알리오 API 증분 수집<br>인증키 = SSM 암호화</div><div class="arr">→</div>
+        <div class="st"><b>대상 선정</b>진행 중 · 미추출 공고 (하루 최대 20건)</div><div class="arr">→</div>
+        <div class="st"><b>Amazon SQS</b>공고 1건 = 메시지 1개<br>3회 실패 → DLQ</div><div class="arr">→</div>
+        <div class="st"><b>추출 Lambda</b>Bedrock 역량·요구유형·근거 추출<br><span style="color:#7b8794">조호성</span></div><div class="arr">→</div>
+        <div class="st"><b>합치기 · 분석</b>NCS 매칭 + 수요 분석<br><span style="color:#7b8794">신성훈 스크립트</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="lane l4">④ 저장 · 검색<small>원본 · 구조화 데이터 · 벡터</small></div>
+  <div class="row r4">
+    <div class="box"><b>Amazon S3</b><span>raw/ API 원본(날짜별) · processed/ 공고 8,900여 건 · 추출 결과 · 수요 CSV · Lambda 코드</span><span class="tag">원본 데이터</span></div>
+    <div class="box"><b>Amazon RDS (PostgreSQL)</b><span>postings · competencies · ncs_map · demand · plans(학습계획 저장)</span><span class="tag">구조화 데이터</span><span class="who">신성훈</span></div>
+    <div class="box"><b>Amazon S3 Vectors</b><span>NCS 정보통신 능력단위 임베딩 (Titan) → 역량 ↔ NCS 의미 검색</span><span class="tag">벡터 검색</span><span class="who">신성훈</span></div>
+    <div class="box"><b>외부 공공 데이터</b><span>잡알리오 채용정보 · NCS 능력단위/교육과정 · 고용24 훈련과정 (공공데이터포털 API)</span></div>
+  </div>
+
+  <div class="lane l5">⑤ 운영 · 보안<small>(선택 항목)</small></div>
+  <div class="row r5">
+    <div class="box opt"><b>Amazon CloudWatch</b><span>모든 Lambda · API 접근 · Step Functions 오류 로그 (14일 보관)</span></div>
+    <div class="box opt"><b>AWS IAM 최소 권한</b><span>함수마다 전용 역할 — 필요한 S3 경로 · 대기열 · 함수만 허용</span></div>
+    <div class="box opt"><b>AWS KMS · SSM</b><span>공공데이터 인증키를 SecureString(KMS 암호화)으로 보관</span></div>
+    <div class="box opt"><b>AWS CloudFormation</b><span>수집 · 추출 · 파이프라인 · API · RDS 스택을 코드로 배포/삭제</span></div>
+  </div>
+</div>
+
+<div class="foot">
+  <div><i style="background:var(--c1);border:1px solid #9cc7ea"></i>사용자 요청 흐름</div>
+  <div><i style="background:var(--c2);border:1px solid #f0bd85"></i>매일 자동 처리</div>
+  <div><i style="background:var(--c3);border:1px solid #97d3ad"></i>AI · 추천</div>
+  <div><i style="background:var(--c4);border:1px solid #c1aee8"></i>저장 · 검색</div>
+  <div>박스 오른쪽 아래 이름 = 담당 팀원</div>
+</div>
+</body></html>

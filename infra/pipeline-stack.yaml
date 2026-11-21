@@ -1,0 +1,354 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: >-
+  aws_edu - 매일 자동 파이프라인 (EventBridge -> Step Functions:
+  수집 Lambda -> 추출 대상 선정 -> SQS -> 추출 Lambda -> 합치기 -> NCS 매칭·수요 분석)   담당 강민경
+
+Parameters:
+  Team:
+    Type: String
+  BucketName:
+    Type: String
+  CodeKey:
+    Type: String
+    Description: S3 에 올린 파이프라인 보조 Lambda 코드 zip 경로
+  CollectFunctionName:
+    Type: String
+    Description: 수집 Lambda (infra/collect-stack.yaml)
+  ExtractFunctionName:
+    Type: String
+    Description: 추출 Lambda (pipeline/extract_lambda_stack.yaml, 조호성)
+  ExtractQueueUrl:
+    Type: String
+  ExtractQueueArn:
+    Type: String
+  ExtractDLQName:
+    Type: String
+    Description: 추출 실패 대기열 이름 (알람용)
+  MaxPerRun:
+    Type: Number
+    Default: 20
+    Description: 하루에 새로 추출할 최대 공고 수 (Bedrock 비용 보호)
+  Schedule:
+    Type: String
+    Default: cron(0 18 * * ? *)
+    Description: 실행 시각 (UTC). 기본값 = 매일 한국시간 새벽 3시
+  ScheduleState:
+    Type: String
+    Default: ENABLED
+    AllowedValues: [ENABLED, DISABLED]
+
+Resources:
+  # ---------------------------------------------------------------- 보조 Lambda (대상 선정 · 대기열 확인 · 분석)
+  TasksRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: !Sub aws-edu-${Team}-pipeline-tasks-role
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal: { Service: lambda.amazonaws.com }
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      Policies:
+        - PolicyName: pipeline-tasks-access
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow                       # 입력: 공고 · 추출 결과 읽기
+                Action: s3:GetObject
+                Resource:
+                  - !Sub arn:aws:s3:::${BucketName}/processed/postings_jobalio.json
+                  - !Sub arn:aws:s3:::${BucketName}/processed/extractions.json
+                  - !Sub arn:aws:s3:::${BucketName}/processed/extractions/*   # 합치기 전 공고별 추출 결과 (SelectTargets 가 읽음)
+              - Effect: Allow                       # 출력: 매칭·수요 결과 파일만 쓰기
+                Action: s3:PutObject
+                Resource:
+                  - !Sub arn:aws:s3:::${BucketName}/processed/skill_ncs_map.json
+                  - !Sub arn:aws:s3:::${BucketName}/processed/ncs_match_coverage.json
+                  - !Sub arn:aws:s3:::${BucketName}/processed/demand_*.csv
+              - Effect: Allow                       # 아직 합치지 않은 공고별 추출 결과 목록
+                Action: s3:ListBucket
+                Resource: !Sub arn:aws:s3:::${BucketName}
+                Condition:
+                  StringLike:
+                    s3:prefix: ["processed/extractions/*"]
+              - Effect: Allow
+                Action: sqs:GetQueueAttributes
+                Resource: !Ref ExtractQueueArn
+
+  TasksLogs:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub /aws/lambda/aws-edu-${Team}-pipeline-tasks
+      RetentionInDays: 14
+
+  TasksFunction:
+    Type: AWS::Lambda::Function
+    DependsOn: TasksLogs
+    Properties:
+      FunctionName: !Sub aws-edu-${Team}-pipeline-tasks
+      Description: 추출 대상 선정 / SQS 대기열 확인 / NCS 매칭 + 수요 분석
+      Runtime: python3.12
+      Handler: lambda_pipeline.handler
+      Role: !GetAtt TasksRole.Arn
+      Timeout: 600
+      MemorySize: 2048                            # 매칭 계산(약 25초)을 빠르게 + 공고 파일 18MB
+      Code:
+        S3Bucket: !Ref BucketName
+        S3Key: !Ref CodeKey
+      Environment:
+        Variables:
+          BUCKET: !Ref BucketName
+          QUEUE_URL: !Ref ExtractQueueUrl
+          MAX_PER_RUN: !Ref MaxPerRun
+
+  # ---------------------------------------------------------------- Step Functions
+  MachineLogs:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub /aws/vendedlogs/states/aws-edu-${Team}-pipeline
+      RetentionInDays: 14
+
+  MachineRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: !Sub aws-edu-${Team}-pipeline-sfn-role
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal: { Service: states.amazonaws.com }
+            Action: sts:AssumeRole
+      Policies:
+        - PolicyName: pipeline-sfn-access
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow                       # 이 파이프라인의 Lambda 3개만 호출
+                Action: lambda:InvokeFunction
+                Resource:
+                  - !Sub arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:${CollectFunctionName}
+                  - !Sub arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:${CollectFunctionName}:*
+                  - !Sub arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:${ExtractFunctionName}
+                  - !Sub arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:${ExtractFunctionName}:*
+                  - !GetAtt TasksFunction.Arn
+                  - !Sub "${TasksFunction.Arn}:*"
+              - Effect: Allow                       # 추출 대기열 하나에만 메시지 보내기
+                Action: sqs:SendMessage
+                Resource: !Ref ExtractQueueArn
+              - Effect: Allow                       # 실행 기록을 CloudWatch Logs 로 (AWS 문서의 필수 권한)
+                Action:
+                  - logs:CreateLogDelivery
+                  - logs:GetLogDelivery
+                  - logs:UpdateLogDelivery
+                  - logs:DeleteLogDelivery
+                  - logs:ListLogDeliveries
+                  - logs:PutResourcePolicy
+                  - logs:DescribeResourcePolicies
+                  - logs:DescribeLogGroups
+                Resource: "*"
+
+  StateMachine:
+    Type: AWS::StepFunctions::StateMachine
+    Properties:
+      StateMachineName: !Sub aws-edu-${Team}-pipeline
+      StateMachineType: STANDARD
+      RoleArn: !GetAtt MachineRole.Arn
+      LoggingConfiguration:
+        Level: ERROR
+        IncludeExecutionData: false
+        Destinations:
+          - CloudWatchLogsLogGroup:
+              LogGroupArn: !GetAtt MachineLogs.Arn
+      DefinitionString: !Sub
+        - |
+          {
+            "Comment": "aws_edu 매일 파이프라인: 수집 → 대상 선정 → SQS → 추출 → 합치기 → 매칭·수요",
+            "StartAt": "Collect",
+            "States": {
+              "Collect": {
+                "Type": "Task",
+                "Comment": "잡알리오 공고 증분 수집 (강민경)",
+                "Resource": "arn:aws:states:::lambda:invoke",
+                "Parameters": { "FunctionName": "${CollectArn}", "Payload": {} },
+                "ResultSelector": { "result.$": "$.Payload" },
+                "ResultPath": "$.collect",
+                "Retry": [ { "ErrorEquals": ["Lambda.ServiceException", "Lambda.TooManyRequestsException", "Lambda.SdkClientException"], "IntervalSeconds": 10, "MaxAttempts": 2, "BackoffRate": 2 } ],
+                "Next": "SelectTargets"
+              },
+              "SelectTargets": {
+                "Type": "Task",
+                "Comment": "진행 중 공고 중 아직 추출 안 된 것",
+                "Resource": "arn:aws:states:::lambda:invoke",
+                "Parameters": { "FunctionName": "${TasksArn}", "Payload": { "action": "targets" } },
+                "ResultSelector": { "count.$": "$.Payload.count", "ids.$": "$.Payload.ids", "ongoing.$": "$.Payload.ongoing", "todo.$": "$.Payload.todo" },
+                "ResultPath": "$.targets",
+                "Next": "HasTargets"
+              },
+              "HasTargets": {
+                "Type": "Choice",
+                "Choices": [ { "Variable": "$.targets.count", "NumericGreaterThan": 0, "Next": "SendToQueue" } ],
+                "Default": "Analyze"
+              },
+              "SendToQueue": {
+                "Type": "Map",
+                "Comment": "공고 1건 = SQS 메시지 1개 → 추출 Lambda(조호성)가 대기열에서 꺼내 처리",
+                "ItemsPath": "$.targets.ids",
+                "MaxConcurrency": 5,
+                "Iterator": {
+                  "StartAt": "SendMessage",
+                  "States": {
+                    "SendMessage": {
+                      "Type": "Task",
+                      "Resource": "arn:aws:states:::sqs:sendMessage",
+                      "Parameters": { "QueueUrl": "${ExtractQueueUrl}", "MessageBody": { "id.$": "$" } },
+                      "End": true
+                    }
+                  }
+                },
+                "ResultPath": null,
+                "Next": "StartWaiting"
+              },
+              "StartWaiting": {
+                "Type": "Pass",
+                "Result": { "pending": 1, "round": 0 },
+                "ResultPath": "$.queue",
+                "Next": "WaitForExtraction"
+              },
+              "WaitForExtraction": { "Type": "Wait", "Seconds": 60, "Next": "CheckQueue" },
+              "CheckQueue": {
+                "Type": "Task",
+                "Resource": "arn:aws:states:::lambda:invoke",
+                "Parameters": { "FunctionName": "${TasksArn}", "Payload": { "action": "queue_depth", "round.$": "$.queue.round" } },
+                "ResultSelector": { "pending.$": "$.Payload.pending", "round.$": "$.Payload.round" },
+                "ResultPath": "$.queue",
+                "Next": "QueueEmpty"
+              },
+              "QueueEmpty": {
+                "Type": "Choice",
+                "Comment": "대기열이 비면 다음 단계 / 30분이 지나면 남은 건 다음 날로 넘기고 진행",
+                "Choices": [
+                  { "Variable": "$.queue.pending", "NumericEquals": 0, "Next": "MergeExtractions" },
+                  { "Variable": "$.queue.round", "NumericGreaterThanEquals": 30, "Next": "MergeExtractions" }
+                ],
+                "Default": "WaitForExtraction"
+              },
+              "MergeExtractions": {
+                "Type": "Task",
+                "Comment": "공고별 추출 결과 → processed/extractions.json (조호성 Lambda 의 merge)",
+                "Resource": "arn:aws:states:::lambda:invoke",
+                "Parameters": { "FunctionName": "${ExtractArn}", "Payload": { "action": "merge" } },
+                "ResultSelector": { "result.$": "$.Payload" },
+                "ResultPath": "$.merge",
+                "Next": "Analyze"
+              },
+              "Analyze": {
+                "Type": "Task",
+                "Comment": "NCS 매칭 + 수요 분석 (신성훈 스크립트) → S3 processed/",
+                "Resource": "arn:aws:states:::lambda:invoke",
+                "Parameters": { "FunctionName": "${TasksArn}", "Payload": { "action": "analyze" } },
+                "ResultSelector": { "result.$": "$.Payload" },
+                "ResultPath": "$.analyze",
+                "Next": "Done"
+              },
+              "Done": { "Type": "Succeed" }
+            }
+          }
+        - CollectArn: !Sub arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:${CollectFunctionName}
+          ExtractArn: !Sub arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:${ExtractFunctionName}
+          TasksArn: !GetAtt TasksFunction.Arn
+
+  # ---------------------------------------------------------------- 매일 실행 (EventBridge)
+  ScheduleRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: !Sub aws-edu-${Team}-pipeline-schedule-role
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal: { Service: events.amazonaws.com }
+            Action: sts:AssumeRole
+      Policies:
+        - PolicyName: start-pipeline
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow
+                Action: states:StartExecution
+                Resource: !Ref StateMachine
+
+  DailyRule:
+    Type: AWS::Events::Rule
+    Properties:
+      Name: !Sub aws-edu-${Team}-pipeline-daily
+      Description: 매일 한 번 전체 파이프라인 실행
+      ScheduleExpression: !Ref Schedule
+      State: !Ref ScheduleState
+      Targets:
+        - Id: pipeline
+          Arn: !Ref StateMachine
+          RoleArn: !GetAtt ScheduleRole.Arn
+          Input: '{"trigger": "daily"}'
+
+  # ---------------------------------------------------------------- CloudWatch 알람 (콘솔 → CloudWatch → 경보)
+  PipelineFailedAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: !Sub aws-edu-${Team}-pipeline-failed
+      AlarmDescription: 매일 파이프라인 실행이 실패함 → Step Functions 실행 기록 확인
+      Namespace: AWS/States
+      MetricName: ExecutionsFailed
+      Dimensions:
+        - Name: StateMachineArn
+          Value: !Ref StateMachine
+      Statistic: Sum
+      Period: 86400
+      EvaluationPeriods: 1
+      Threshold: 1
+      ComparisonOperator: GreaterThanOrEqualToThreshold
+      TreatMissingData: notBreaching
+
+  ExtractDLQAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: !Sub aws-edu-${Team}-extract-dlq
+      AlarmDescription: 3번 실패한 추출 메시지가 실패 대기열(DLQ)에 쌓임 → 추출 Lambda 로그 확인
+      Namespace: AWS/SQS
+      MetricName: ApproximateNumberOfMessagesVisible
+      Dimensions:
+        - Name: QueueName
+          Value: !Ref ExtractDLQName
+      Statistic: Maximum
+      Period: 300
+      EvaluationPeriods: 1
+      Threshold: 1
+      ComparisonOperator: GreaterThanOrEqualToThreshold
+      TreatMissingData: notBreaching
+
+  TasksErrorsAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: !Sub aws-edu-${Team}-tasks-errors
+      AlarmDescription: 파이프라인 보조 Lambda(대상 선정·분석) 오류
+      Namespace: AWS/Lambda
+      MetricName: Errors
+      Dimensions:
+        - Name: FunctionName
+          Value: !Ref TasksFunction
+      Statistic: Sum
+      Period: 3600
+      EvaluationPeriods: 1
+      Threshold: 1
+      ComparisonOperator: GreaterThanOrEqualToThreshold
+      TreatMissingData: notBreaching
+
+Outputs:
+  StateMachineArn:
+    Value: !Ref StateMachine
+  TasksFunctionName:
+    Value: !Ref TasksFunction
+  RuleName:
+    Value: !Ref DailyRule

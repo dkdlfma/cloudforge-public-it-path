@@ -1,0 +1,15 @@
+{
+  "MySQL": [
+    {
+      "unit_code": "2001020405_19v4",
+      "unit_name": "데이터베이스 구현",
+      "score": 0.441,
+      "backend": "titan_s3vectors",
+      "catalog": "provided",
+      "competency_type": "기술",
+      "competency_types": [
+        "기술"
+      ]
+    }
+  ]
+}

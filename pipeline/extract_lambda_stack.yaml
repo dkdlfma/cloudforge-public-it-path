@@ -1,0 +1,131 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: aws_edu - 공고 역량 추출 (SQS -> Lambda -> Bedrock -> S3)   담당 조호성
+
+Parameters:
+  Team:
+    Type: String
+    Description: 팀 이름 (예 team04-kang)
+  BucketName:
+    Type: String
+    Description: 데이터 버킷 (aws-edu-<팀>-<계정번호>)
+  CodeKey:
+    Type: String
+    Description: S3 에 올린 Lambda 코드 zip 경로
+  ModelId:
+    Type: String
+    Default: global.anthropic.claude-haiku-4-5-20251001-v1:0
+  BedrockMock:
+    Type: String
+    Default: "0"
+    AllowedValues: ["0", "1"]
+    Description: 1 이면 Bedrock 을 부르지 않고 규칙 기반으로만 추출 (비용 0 테스트용)
+  MaxConcurrency:
+    Type: Number
+    Default: 2
+    MinValue: 2
+    Description: 동시에 돌아가는 Lambda 수 상한 (Bedrock 호출 제한·예산 보호)
+
+Resources:
+  ExtractDLQ:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName: !Sub aws-edu-${Team}-extract-dlq
+      MessageRetentionPeriod: 1209600          # 14일 보관 (실패 원인 확인용)
+
+  ExtractQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName: !Sub aws-edu-${Team}-extract-queue
+      VisibilityTimeout: 720                   # Lambda 제한시간(120초)의 6배 (AWS 권장)
+      MessageRetentionPeriod: 345600           # 4일
+      RedrivePolicy:
+        deadLetterTargetArn: !GetAtt ExtractDLQ.Arn
+        maxReceiveCount: 3                     # 3번 실패하면 DLQ 로
+
+  ExtractRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: !Sub aws-edu-${Team}-extract-role
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal: { Service: lambda.amazonaws.com }
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      Policies:
+        - PolicyName: extract-access
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow                   # 공고 파일은 읽기만
+                Action: s3:GetObject
+                Resource: !Sub arn:aws:s3:::${BucketName}/processed/postings_jobalio.json
+              - Effect: Allow                   # 추출 결과만 읽기·쓰기
+                Action: [s3:GetObject, s3:PutObject]
+                Resource:
+                  - !Sub arn:aws:s3:::${BucketName}/processed/extractions/*
+                  - !Sub arn:aws:s3:::${BucketName}/processed/extractions.json
+              - Effect: Allow
+                Action: s3:ListBucket
+                Resource: !Sub arn:aws:s3:::${BucketName}
+                Condition:
+                  StringLike:
+                    s3:prefix: ["processed/extractions/*", "processed/extractions.json"]
+              - Effect: Allow                   # 이 대기열 하나만
+                Action: [sqs:ReceiveMessage, sqs:DeleteMessage, sqs:GetQueueAttributes, sqs:ChangeMessageVisibility]
+                Resource: !GetAtt ExtractQueue.Arn
+              - Effect: Allow                   # Bedrock 모델 호출 (global 추론 프로필은 여러 리전으로 라우팅됨)
+                Action: [bedrock:InvokeModel, bedrock:InvokeModelWithResponseStream]
+                Resource: "*"
+
+  ExtractLogs:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub /aws/lambda/aws-edu-${Team}-extract
+      RetentionInDays: 14
+
+  ExtractFunction:
+    Type: AWS::Lambda::Function
+    DependsOn: ExtractLogs
+    Properties:
+      FunctionName: !Sub aws-edu-${Team}-extract
+      Description: 공고 1건 -> Bedrock 역량 추출 -> S3 processed/extractions/
+      Runtime: python3.12
+      Handler: extract_lambda.handler
+      Role: !GetAtt ExtractRole.Arn
+      Timeout: 120
+      MemorySize: 1024                          # 공고 파일(약 18MB)을 메모리에 올림
+      Code:
+        S3Bucket: !Ref BucketName
+        S3Key: !Ref CodeKey
+      Environment:
+        Variables:
+          BUCKET: !Ref BucketName
+          MODEL_ID: !Ref ModelId
+          BEDROCK_MOCK: !Ref BedrockMock
+
+  QueueTrigger:
+    Type: AWS::Lambda::EventSourceMapping
+    Properties:
+      EventSourceArn: !GetAtt ExtractQueue.Arn
+      FunctionName: !Ref ExtractFunction
+      BatchSize: 1                              # 메시지 1개 = 공고 1건
+      FunctionResponseTypes: [ReportBatchItemFailures]
+      ScalingConfig:
+        MaximumConcurrency: !Ref MaxConcurrency
+
+Outputs:
+  FunctionName:
+    Value: !Ref ExtractFunction
+  FunctionArn:
+    Value: !GetAtt ExtractFunction.Arn
+  QueueUrl:
+    Value: !Ref ExtractQueue
+  QueueArn:
+    Value: !GetAtt ExtractQueue.Arn
+  DeadLetterQueueUrl:
+    Value: !Ref ExtractDLQ
+  LogGroup:
+    Value: !Ref ExtractLogs

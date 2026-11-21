@@ -1,0 +1,8 @@
+boto3>=1.40
+pandas>=2.0
+kiwipiepy>=0.18
+python-dotenv>=1.0
+requests>=2.31
+streamlit>=1.50
+jupyterlab>=4.0
+ipykernel

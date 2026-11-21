@@ -1,0 +1,1570 @@
+{
+  "1.2톤 고소작업차 운행": [],
+  "1종 보통 운전면허": [],
+  "AI 학습데이터 구축": [
+    {
+      "unit_code": "2001070601_22v1",
+      "unit_name": "인공지능 학습데이터 구축 기획",
+      "score": 0.5828,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "직무지식",
+      "competency_types": [
+        "직무지식"
+      ]
+    },
+    {
+      "unit_code": "2001070605_22v1",
+      "unit_name": "인공지능 학습데이터 정제",
+      "score": 0.4494,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "직무지식",
+      "competency_types": [
+        "직무지식"
+      ]
+    },
+    {
+      "unit_code": "2001070609_22v1",
+      "unit_name": "인공지능 학습데이터 변환",
+      "score": 0.4259,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "직무지식",
+      "competency_types": [
+        "직무지식"
+      ]
+    },
+    {
+      "unit_code": "2001070602_22v1",
+      "unit_name": "인공지능 학습데이터 획득 계획",
+      "score": 0.4229,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "직무지식",
+      "competency_types": [
+        "직무지식"
+      ]
+    },
+    {
+      "unit_code": "2001070604_22v1",
+      "unit_name": "인공지능 학습데이터 저장 관리",
+      "score": 0.4229,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "직무지식",
+      "competency_types": [
+        "직무지식"
+      ]
+    }
+  ],
+  "AICE Associate": [],
+  "AI모델 학습": [],
+  "AI챔피언 인증": [],
+  "AMI통신망 시설공사": [],
+  "CAD": [],
+  "CI/CD": [
+    {
+      "unit_code": "2001040302_19v4",
+      "unit_name": "테스트 진단 컨설팅",
+      "score": 0.4408,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "기술",
+      "competency_types": [
+        "기술"
+      ]
+    },
+    {
+      "unit_code": "2001040320_21v5",
+      "unit_name": "테스트 관리",
+      "score": 0.4305,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "기술",
+      "competency_types": [
+        "기술"
+      ]
+    },
+    {
+      "unit_code": "2001040310_21v5",
+      "unit_name": "테스트 자동화",
+      "score": 0.407,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "기술",
+      "competency_types": [
+        "기술"
+      ]
+    }
+  ],
+  "CISA": [
+    {
+      "unit_code": "2003030301_22v2",
+      "unit_name": "정보시스템 운영기획 수립",
+      "score": 0.4574,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    },
+    {
+      "unit_code": "2001010208_19v4",
+      "unit_name": "정보시스템 개선방안 도출",
+      "score": 0.4253,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    },
+    {
+      "unit_code": "2001060103_19v2",
+      "unit_name": "정보보호 정책 기획",
+      "score": 0.4248,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    },
+    {
+      "unit_code": "2001010211_19v4",
+      "unit_name": "정보시스템인프라분석",
+      "score": 0.4112,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    },
+    {
+      "unit_code": "2002020606_18v1",
+      "unit_name": "공공안전통신망 정보보안관리",
+      "score": 0.4085,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    }
+  ],
+  "CISSP": [
+    {
+      "unit_code": "2001060103_19v2",
+      "unit_name": "정보보호 정책 기획",
+      "score": 0.4722,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    },
+    {
+      "unit_code": "2001060111_19v3",
+      "unit_name": "관리적 보안 운영",
+      "score": 0.4506,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    },
+    {
+      "unit_code": "2002020606_18v1",
+      "unit_name": "공공안전통신망 정보보안관리",
+      "score": 0.4479,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    },
+    {
+      "unit_code": "2001060201_19v2",
+      "unit_name": "보안전략수립 컨설팅",
+      "score": 0.4459,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    },
+    {
+      "unit_code": "2001060901_21v1",
+      "unit_name": "영상정보보안·운영 정책 수립",
+      "score": 0.4371,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    }
+  ],
+  "Docker": [
+    {
+      "unit_code": "2001020322_19v6",
+      "unit_name": "임베디드 애플리케이션 설계",
+      "score": 0.4326,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "기술",
+      "competency_types": [
+        "기술"
+      ]
+    }
+  ],
+  "Excel": [],
+  "ITQ": [],
+  "IT컨설팅": [],
+  "JSP": [],
+  "Java": [
+    {
+      "unit_code": "2001020324_19v6",
+      "unit_name": "임베디드 애플리케이션 구현",
+      "score": 0.5712,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "기술",
+      "competency_types": [
+        "기술"
+      ]
+    },
+    {
+      "unit_code": "2001021006_19v2",
+      "unit_name": "핀테크 인터페이스 구현",
+      "score": 0.476,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "기술",
+      "competency_types": [
+        "기술"
+      ]
+    },
+    {
+      "unit_code": "2001020323_19v5",
+      "unit_name": "임베디드 애플리케이션 구현 환경 구축",
+      "score": 0.4421,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "기술",
+      "competency_types": [
+        "기술"
+      ]
+    },
+    {
+      "unit_code": "2001070106_23v2",
+      "unit_name": "인공지능 플랫폼 인터페이스 구현",
+      "score": 0.4251,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "기술",
+      "competency_types": [
+        "기술"
+      ]
+    },
+    {
+      "unit_code": "2001070504_20v1",
+      "unit_name": "인공지능서비스 애플리케이션 개발",
+      "score": 0.4153,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "기술",
+      "competency_types": [
+        "기술"
+      ]
+    }
+  ],
+  "Kubernetes": [
+    {
+      "unit_code": "2001030406_19v2",
+      "unit_name": "빅데이터 플랫폼 모니터링",
+      "score": 0.449,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "기술",
+      "competency_types": [
+        "기술"
+      ]
+    }
+  ],
+  "MOS": [],
+  "MS Office": [],
+  "MSA": [],
+  "MongoDB": [
+    {
+      "unit_code": "2001020412_19v4",
+      "unit_name": "데이터 전환",
+      "score": 0.5842,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "기술",
+      "competency_types": [
+        "기술"
+      ]
+    },
+    {
+      "unit_code": "2001020404_19v4",
+      "unit_name": "물리 데이터베이스 설계",
+      "score": 0.5313,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "기술",
+      "competency_types": [
+        "기술"
+      ]
+    },
+    {
+      "unit_code": "2001020411_19v4",
+      "unit_name": "데이터 전환 설계",
+      "score": 0.5205,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "기술",
+      "competency_types": [
+        "기술"
+      ]
+    },
+    {
+      "unit_code": "2001020405_19v4",
+      "unit_name": "데이터베이스 구현",
+      "score": 0.5003,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "기술",
+      "competency_types": [
+        "기술"
+      ]
+    },
+    {
+      "unit_code": "2001021107_19v2",
+      "unit_name": "데이터베이스 검증",
+      "score": 0.4988,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "기술",
+      "competency_types": [
+        "기술"
+      ]
+    }
+  ],
+  "MySQL": [
+    {
+      "unit_code": "2001020405_19v4",
+      "unit_name": "데이터베이스 구현",
+      "score": 0.6462,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "기술",
+      "competency_types": [
+        "기술"
+      ]
+    },
+    {
+      "unit_code": "2001020404_19v4",
+      "unit_name": "물리 데이터베이스 설계",
+      "score": 0.6077,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "기술",
+      "competency_types": [
+        "기술"
+      ]
+    },
+    {
+      "unit_code": "2001020412_19v4",
+      "unit_name": "데이터 전환",
+      "score": 0.5833,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "기술",
+      "competency_types": [
+        "기술"
+      ]
+    },
+    {
+      "unit_code": "2001021107_19v2",
+      "unit_name": "데이터베이스 검증",
+      "score": 0.5654,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "기술",
+      "competency_types": [
+        "기술"
+      ]
+    },
+    {
+      "unit_code": "2001020403_19v4",
+      "unit_name": "논리 데이터베이스 설계",
+      "score": 0.5448,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "기술",
+      "competency_types": [
+        "기술"
+      ]
+    }
+  ],
+  "OA설비 유지보수": [
+    {
+      "unit_code": "2002031707_13v1",
+      "unit_name": "무선데이터통신서비스 시스템 유지보수",
+      "score": 0.4981,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "직무지식",
+      "competency_types": [
+        "직무지식"
+      ]
+    },
+    {
+      "unit_code": "2002010416_21v1",
+      "unit_name": "구내통신설비 유지보수",
+      "score": 0.4897,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "직무지식",
+      "competency_types": [
+        "직무지식"
+      ]
+    },
+    {
+      "unit_code": "2002020608_18v1",
+      "unit_name": "공공안전통신망 유지보수",
+      "score": 0.4897,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "직무지식",
+      "competency_types": [
+        "직무지식"
+      ]
+    },
+    {
+      "unit_code": "2002010509_17v1",
+      "unit_name": "실감형플랫폼 유지보수",
+      "score": 0.4758,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "직무지식",
+      "competency_types": [
+        "직무지식"
+      ]
+    },
+    {
+      "unit_code": "2002031105_19v2",
+      "unit_name": "무선호출메시징 네트워크 유지보수",
+      "score": 0.4606,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "직무지식",
+      "competency_types": [
+        "직무지식"
+      ]
+    }
+  ],
+  "OCP": [],
+  "Oracle": [],
+  "Oracle 관련 자격증": [],
+  "PC활용": [],
+  "PMP": [],
+  "React.js": [
+    {
+      "unit_code": "2001021006_19v2",
+      "unit_name": "핀테크 인터페이스 구현",
+      "score": 0.4283,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "기술",
+      "competency_types": [
+        "기술"
+      ]
+    },
+    {
+      "unit_code": "2001070506_20v1",
+      "unit_name": "인공지능서비스 인터페이스 개발",
+      "score": 0.4098,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "기술",
+      "competency_types": [
+        "기술"
+      ]
+    }
+  ],
+  "SQL": [
+    {
+      "unit_code": "2001020415_19v1",
+      "unit_name": "SQL작성",
+      "score": 0.4294,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "기술",
+      "competency_types": [
+        "기술"
+      ]
+    },
+    {
+      "unit_code": "2001020413_19v4",
+      "unit_name": "SQL활용",
+      "score": 0.4133,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "기술",
+      "competency_types": [
+        "기술"
+      ]
+    }
+  ],
+  "SQL 튜닝": [
+    {
+      "unit_code": "2001020413_19v4",
+      "unit_name": "SQL활용",
+      "score": 0.4379,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "직무지식",
+      "competency_types": [
+        "직무지식"
+      ]
+    },
+    {
+      "unit_code": "2001020415_19v1",
+      "unit_name": "SQL작성",
+      "score": 0.4358,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "직무지식",
+      "competency_types": [
+        "직무지식"
+      ]
+    },
+    {
+      "unit_code": "2001020414_19v4",
+      "unit_name": "SQL응용",
+      "score": 0.4168,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "직무지식",
+      "competency_types": [
+        "직무지식"
+      ]
+    },
+    {
+      "unit_code": "2001020412_19v4",
+      "unit_name": "데이터 전환",
+      "score": 0.41,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "직무지식",
+      "competency_types": [
+        "직무지식"
+      ]
+    },
+    {
+      "unit_code": "2001020411_19v4",
+      "unit_name": "데이터 전환 설계",
+      "score": 0.4044,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "직무지식",
+      "competency_types": [
+        "직무지식"
+      ]
+    }
+  ],
+  "Spring Boot": [
+    {
+      "unit_code": "2001021205_19v1",
+      "unit_name": "서버 연동",
+      "score": 0.4108,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "기술",
+      "competency_types": [
+        "기술"
+      ]
+    },
+    {
+      "unit_code": "2001021304_19v1",
+      "unit_name": "서버 구성",
+      "score": 0.4043,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "기술",
+      "competency_types": [
+        "기술"
+      ]
+    }
+  ],
+  "TRP": [],
+  "가맹거래사": [],
+  "간호사": [],
+  "개인정보관리사": [
+    {
+      "unit_code": "2001110104_23v2",
+      "unit_name": "개인정보보호 위험관리",
+      "score": 0.4013,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    },
+    {
+      "unit_code": "2001110110_23v1",
+      "unit_name": "개인정보 수탁자 관리",
+      "score": 0.4013,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    }
+  ],
+  "개인정보보호 관리": [
+    {
+      "unit_code": "2001110102_23v2",
+      "unit_name": "개인정보보호 기획",
+      "score": 0.6697,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "직무지식",
+      "competency_types": [
+        "직무지식"
+      ]
+    },
+    {
+      "unit_code": "2001110105_23v2",
+      "unit_name": "개인정보보호 운영",
+      "score": 0.6697,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "직무지식",
+      "competency_types": [
+        "직무지식"
+      ]
+    },
+    {
+      "unit_code": "2001110104_23v2",
+      "unit_name": "개인정보보호 위험관리",
+      "score": 0.6623,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "직무지식",
+      "competency_types": [
+        "직무지식"
+      ]
+    },
+    {
+      "unit_code": "2001060107_18v2",
+      "unit_name": "개인정보보호 운영",
+      "score": 0.6113,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "직무지식",
+      "competency_types": [
+        "직무지식"
+      ]
+    },
+    {
+      "unit_code": "2001060104_16v1",
+      "unit_name": "개인정보보호 기획",
+      "score": 0.6089,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "직무지식",
+      "competency_types": [
+        "직무지식"
+      ]
+    }
+  ],
+  "경주마관리 경력": [],
+  "경찰 수사 업무 경력": [],
+  "고소작업차량 운전": [],
+  "공사 및 유지보수 관련 업무 경험": [],
+  "관련 자격증": [],
+  "관세정보시스템 운영·유지관리": [
+    {
+      "unit_code": "2003030306_13v1",
+      "unit_name": "송출 정보시스템 운영",
+      "score": 0.4647,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "직무지식",
+      "competency_types": [
+        "직무지식"
+      ]
+    },
+    {
+      "unit_code": "2001060906_21v1",
+      "unit_name": "영상정보 관제시스템 운영",
+      "score": 0.4513,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "직무지식",
+      "competency_types": [
+        "직무지식"
+      ]
+    },
+    {
+      "unit_code": "2003030303_13v1",
+      "unit_name": "제작지원 정보시스템 운영",
+      "score": 0.4421,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "직무지식",
+      "competency_types": [
+        "직무지식"
+      ]
+    },
+    {
+      "unit_code": "2003030508_23v3",
+      "unit_name": "방송시스템 운영",
+      "score": 0.4393,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "직무지식",
+      "competency_types": [
+        "직무지식"
+      ]
+    },
+    {
+      "unit_code": "2003030307_13v1",
+      "unit_name": "송신 정보시스템 운영",
+      "score": 0.438,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "직무지식",
+      "competency_types": [
+        "직무지식"
+      ]
+    }
+  ],
+  "관세행정": [],
+  "국어능력인증": [],
+  "대기환경산업기사": [],
+  "데이터분석전문가": [],
+  "말조련사": [],
+  "미술관·미술공간 근무 및 전시·기획 경력": [],
+  "방송 아나운서 경력": [],
+  "배전전기원": [],
+  "변호사": [],
+  "보안관제 기술자격 (초급 이상, 중급 이하)": [],
+  "빅데이터 분석": [
+    {
+      "unit_code": "2001010703_19v2",
+      "unit_name": "빅데이터 분석 기획",
+      "score": 0.7628,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "직무지식",
+      "competency_types": [
+        "직무지식"
+      ]
+    },
+    {
+      "unit_code": "2001010514_21v1",
+      "unit_name": "빅데이터 분석 결과 평가",
+      "score": 0.6649,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "직무지식",
+      "competency_types": [
+        "직무지식"
+      ]
+    },
+    {
+      "unit_code": "2001010513_21v1",
+      "unit_name": "빅데이터 분석 모델링",
+      "score": 0.6463,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "직무지식",
+      "competency_types": [
+        "직무지식"
+      ]
+    },
+    {
+      "unit_code": "2001010515_21v1",
+      "unit_name": "빅데이터 분석 플로우 구성",
+      "score": 0.6333,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "직무지식",
+      "competency_types": [
+        "직무지식"
+      ]
+    },
+    {
+      "unit_code": "2001030404_19v2",
+      "unit_name": "빅데이터 솔루션 운영 계획",
+      "score": 0.5423,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "직무지식",
+      "competency_types": [
+        "직무지식"
+      ]
+    }
+  ],
+  "빅데이터분석기사": [
+    {
+      "unit_code": "2001021106_19v2",
+      "unit_name": "데이터 모델 검증",
+      "score": 0.5813,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    },
+    {
+      "unit_code": "2001020903_19v2",
+      "unit_name": "빅데이터 수집시스템 개발",
+      "score": 0.5668,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    },
+    {
+      "unit_code": "2001010703_19v2",
+      "unit_name": "빅데이터 분석 기획",
+      "score": 0.5605,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    },
+    {
+      "unit_code": "2001010506_19v3",
+      "unit_name": "통계 기반 데이터 분석",
+      "score": 0.5598,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    },
+    {
+      "unit_code": "2001020905_19v2",
+      "unit_name": "빅데이터 처리시스템 개발",
+      "score": 0.5222,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    }
+  ],
+  "사무보조 업무 경력": [],
+  "사무자동화기사": [],
+  "사무자동화산업기사": [],
+  "사회조사분석사": [],
+  "산업보건지도사": [],
+  "산업위생관리산업기사": [],
+  "상담심리사 1급": [],
+  "상담심리사 2급": [],
+  "생활스포츠지도사 2급": [],
+  "스포츠 중계 경력": [],
+  "승마교관 경력": [],
+  "승마교육 경력": [],
+  "엑셀": [],
+  "원자로조종감독자면허": [],
+  "원자로조종사면허": [],
+  "응용SW엔지니어링": [],
+  "의사": [],
+  "인간공학기사": [],
+  "재활승마지도사": [],
+  "전기 또는 통신관련 자격증": [],
+  "전기·통신 분야 관련 업무": [],
+  "전기·통신·배전자동화 현장업무": [],
+  "전기·통신분야 관련 자격증": [],
+  "전기기능사": [],
+  "전문상담교사 1급": [],
+  "전문상담교사 2급": [],
+  "전문상담사 1급": [],
+  "전문상담사 2급": [],
+  "전문스포츠지도사 2급": [],
+  "전자정부프레임워크": [],
+  "정보관리기술사": [],
+  "정보보안기사": [
+    {
+      "unit_code": "2002020606_18v1",
+      "unit_name": "공공안전통신망 정보보안관리",
+      "score": 0.5122,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    },
+    {
+      "unit_code": "2001060103_19v2",
+      "unit_name": "정보보호 정책 기획",
+      "score": 0.4885,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    },
+    {
+      "unit_code": "2001060101_19v2",
+      "unit_name": "정보보호 거버넌스 구현",
+      "score": 0.4757,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    },
+    {
+      "unit_code": "2001060201_19v2",
+      "unit_name": "보안전략수립 컨설팅",
+      "score": 0.4655,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    },
+    {
+      "unit_code": "2001060111_19v3",
+      "unit_name": "관리적 보안 운영",
+      "score": 0.4586,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    }
+  ],
+  "정보보안산업기사": [
+    {
+      "unit_code": "2002020606_18v1",
+      "unit_name": "공공안전통신망 정보보안관리",
+      "score": 0.5128,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    },
+    {
+      "unit_code": "2001060103_19v2",
+      "unit_name": "정보보호 정책 기획",
+      "score": 0.4958,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    },
+    {
+      "unit_code": "2001060101_19v2",
+      "unit_name": "정보보호 거버넌스 구현",
+      "score": 0.4758,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    },
+    {
+      "unit_code": "2001060201_19v2",
+      "unit_name": "보안전략수립 컨설팅",
+      "score": 0.4685,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    },
+    {
+      "unit_code": "2001060106_19v2",
+      "unit_name": "정보보호 계획 수립",
+      "score": 0.4646,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    }
+  ],
+  "정보보호": [
+    {
+      "unit_code": "2001060101_19v2",
+      "unit_name": "정보보호 거버넌스 구현",
+      "score": 0.6598,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "직무지식",
+      "competency_types": [
+        "직무지식"
+      ]
+    },
+    {
+      "unit_code": "2001060103_19v2",
+      "unit_name": "정보보호 정책 기획",
+      "score": 0.6494,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "직무지식",
+      "competency_types": [
+        "직무지식"
+      ]
+    },
+    {
+      "unit_code": "2001061201_23v1",
+      "unit_name": "클라우드 정보보호 계획수립",
+      "score": 0.5803,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "직무지식",
+      "competency_types": [
+        "직무지식"
+      ]
+    },
+    {
+      "unit_code": "2001110102_23v2",
+      "unit_name": "개인정보보호 기획",
+      "score": 0.556,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "직무지식",
+      "competency_types": [
+        "직무지식"
+      ]
+    },
+    {
+      "unit_code": "2001110105_23v2",
+      "unit_name": "개인정보보호 운영",
+      "score": 0.556,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "직무지식",
+      "competency_types": [
+        "직무지식"
+      ]
+    }
+  ],
+  "정보시스템 개발 관리": [
+    {
+      "unit_code": "2003030301_22v2",
+      "unit_name": "정보시스템 운영기획 수립",
+      "score": 0.5247,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "직무지식",
+      "competency_types": [
+        "직무지식"
+      ]
+    },
+    {
+      "unit_code": "2001010208_19v4",
+      "unit_name": "정보시스템 개선방안 도출",
+      "score": 0.4959,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "직무지식",
+      "competency_types": [
+        "직무지식"
+      ]
+    },
+    {
+      "unit_code": "2003030315_22v3",
+      "unit_name": "정보시스템 설계구축",
+      "score": 0.4826,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "직무지식",
+      "competency_types": [
+        "직무지식"
+      ]
+    },
+    {
+      "unit_code": "2003030314_22v3",
+      "unit_name": "정보시스템 요구분석",
+      "score": 0.4654,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "직무지식",
+      "competency_types": [
+        "직무지식"
+      ]
+    },
+    {
+      "unit_code": "2001010212_19v4",
+      "unit_name": "정보시스템애플리케이션분석",
+      "score": 0.4486,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "직무지식",
+      "competency_types": [
+        "직무지식"
+      ]
+    }
+  ],
+  "정보시스템 구축·연구·사업관리": [
+    {
+      "unit_code": "2003030301_22v2",
+      "unit_name": "정보시스템 운영기획 수립",
+      "score": 0.4691,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "직무지식",
+      "competency_types": [
+        "직무지식"
+      ]
+    },
+    {
+      "unit_code": "2003030103_23v3",
+      "unit_name": "유무선 통합시스템 구축",
+      "score": 0.446,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "직무지식",
+      "competency_types": [
+        "직무지식"
+      ]
+    },
+    {
+      "unit_code": "2003030314_22v3",
+      "unit_name": "정보시스템 요구분석",
+      "score": 0.4452,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "직무지식",
+      "competency_types": [
+        "직무지식"
+      ]
+    },
+    {
+      "unit_code": "2002031305_13v1",
+      "unit_name": "특수이동통신서비스 시스템 구축(구버전)",
+      "score": 0.4431,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "직무지식",
+      "competency_types": [
+        "직무지식"
+      ]
+    },
+    {
+      "unit_code": "2003030315_22v3",
+      "unit_name": "정보시스템 설계구축",
+      "score": 0.4308,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "직무지식",
+      "competency_types": [
+        "직무지식"
+      ]
+    }
+  ],
+  "정보시스템 운영·유지관리": [
+    {
+      "unit_code": "2003030301_22v2",
+      "unit_name": "정보시스템 운영기획 수립",
+      "score": 0.5524,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "직무지식",
+      "competency_types": [
+        "직무지식"
+      ]
+    },
+    {
+      "unit_code": "2001060906_21v1",
+      "unit_name": "영상정보 관제시스템 운영",
+      "score": 0.5394,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "직무지식",
+      "competency_types": [
+        "직무지식"
+      ]
+    },
+    {
+      "unit_code": "2001010307_19v4",
+      "unit_name": "정보기술 운영방안 수립",
+      "score": 0.5251,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "직무지식",
+      "competency_types": [
+        "직무지식"
+      ]
+    },
+    {
+      "unit_code": "2002031314_19v2",
+      "unit_name": "IoT융합서비스 정보시스템 운용",
+      "score": 0.5217,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "직무지식",
+      "competency_types": [
+        "직무지식"
+      ]
+    },
+    {
+      "unit_code": "2003030306_13v1",
+      "unit_name": "송출 정보시스템 운영",
+      "score": 0.5113,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "직무지식",
+      "competency_types": [
+        "직무지식"
+      ]
+    }
+  ],
+  "정보시스템감리사": [
+    {
+      "unit_code": "2003030301_22v2",
+      "unit_name": "정보시스템 운영기획 수립",
+      "score": 0.411,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    },
+    {
+      "unit_code": "2001010212_19v4",
+      "unit_name": "정보시스템애플리케이션분석",
+      "score": 0.4009,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    }
+  ],
+  "정보처리": [],
+  "정보처리기사": [
+    {
+      "unit_code": "2001020404_19v4",
+      "unit_name": "물리 데이터베이스 설계",
+      "score": 0.4698,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    },
+    {
+      "unit_code": "2001020405_19v4",
+      "unit_name": "데이터베이스 구현",
+      "score": 0.4648,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    },
+    {
+      "unit_code": "2001020403_19v4",
+      "unit_name": "논리 데이터베이스 설계",
+      "score": 0.4483,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    },
+    {
+      "unit_code": "2001021107_19v2",
+      "unit_name": "데이터베이스 검증",
+      "score": 0.4135,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    },
+    {
+      "unit_code": "2001060101_19v2",
+      "unit_name": "정보보호 거버넌스 구현",
+      "score": 0.411,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    }
+  ],
+  "정보처리산업기사": [
+    {
+      "unit_code": "2001020404_19v4",
+      "unit_name": "물리 데이터베이스 설계",
+      "score": 0.4639,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    },
+    {
+      "unit_code": "2001020405_19v4",
+      "unit_name": "데이터베이스 구현",
+      "score": 0.4605,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    },
+    {
+      "unit_code": "2001020403_19v4",
+      "unit_name": "논리 데이터베이스 설계",
+      "score": 0.4473,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    },
+    {
+      "unit_code": "2001021107_19v2",
+      "unit_name": "데이터베이스 검증",
+      "score": 0.407,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    },
+    {
+      "unit_code": "2001060111_19v3",
+      "unit_name": "관리적 보안 운영",
+      "score": 0.4055,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    }
+  ],
+  "정보통신기사": [
+    {
+      "unit_code": "2001090204_20v1",
+      "unit_name": "스마트물류 네트워크 구축",
+      "score": 0.4559,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    },
+    {
+      "unit_code": "2002010305_22v3",
+      "unit_name": "네트워크구축공사",
+      "score": 0.4178,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    },
+    {
+      "unit_code": "2003030310_22v2",
+      "unit_name": "네트워크 운영",
+      "score": 0.4144,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    },
+    {
+      "unit_code": "2002020606_18v1",
+      "unit_name": "공공안전통신망 정보보안관리",
+      "score": 0.4086,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    }
+  ],
+  "정보통신기술사": [
+    {
+      "unit_code": "2002010605_18v1",
+      "unit_name": "철도정보통신망설비공사",
+      "score": 0.4398,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    },
+    {
+      "unit_code": "2002031710_13v1",
+      "unit_name": "무선데이터통신서비스 시스템 보안",
+      "score": 0.4304,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    },
+    {
+      "unit_code": "2002020606_18v1",
+      "unit_name": "공공안전통신망 정보보안관리",
+      "score": 0.4292,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    },
+    {
+      "unit_code": "2002020608_18v1",
+      "unit_name": "공공안전통신망 유지보수",
+      "score": 0.4029,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    },
+    {
+      "unit_code": "2002031707_13v1",
+      "unit_name": "무선데이터통신서비스 시스템 유지보수",
+      "score": 0.4018,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    }
+  ],
+  "정보통신기술자 중급": [],
+  "정보통신산업기사": [
+    {
+      "unit_code": "2001090204_20v1",
+      "unit_name": "스마트물류 네트워크 구축",
+      "score": 0.4425,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    },
+    {
+      "unit_code": "2003030310_22v2",
+      "unit_name": "네트워크 운영",
+      "score": 0.4371,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    },
+    {
+      "unit_code": "2002010305_22v3",
+      "unit_name": "네트워크구축공사",
+      "score": 0.4067,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    },
+    {
+      "unit_code": "2001010605_19v2",
+      "unit_name": "IoT 네트워크 기획",
+      "score": 0.4047,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    },
+    {
+      "unit_code": "2001020503_19v4",
+      "unit_name": "네트워크 토폴로지 설계",
+      "score": 0.4027,
+      "backend": "mock_cosine",
+      "catalog": "provided",
+      "competency_type": "자격증",
+      "competency_types": [
+        "자격증"
+      ]
+    }
+  ],
+  "정보화 관련 업무": [],
+  "직업상담사 1급": [],
+  "직업상담사 2급": [],
+  "청소년상담사 1급": [],
+  "청소년상담사 2급": [],
+  "청소년상담사 3급": [],
+  "컴퓨터시스템응용기술사": [],
+  "컴퓨터활용능력": [],
+  "통계패키지": [],
+  "통신관련 자격증": [],
+  "통신기능사": [],
+  "통신설비기능장": [],
+  "학예사": [],
+  "한국사능력검정": [],
+  "한글": [],
+  "한글(HWP)": [],
+  "화물 차량 운전": []
+}

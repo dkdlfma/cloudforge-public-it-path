@@ -1,0 +1,1412 @@
+{
+ "_meta": {
+  "backend": "mock",
+  "dims": 512,
+  "embed_model": "mock-ngram",
+  "ncs_catalog": "ncs_units_official.json",
+  "ncs_units": 1214,
+  "training_titles": 905,
+  "unknown_stacks": [
+   "CAD",
+   "Hyper-V",
+   "Linux 서버 운영",
+   "Storage 운영",
+   "Vmware",
+   "Windows 서버 운영",
+   "Xen",
+   "통계패키지",
+   "화물 차량 운전"
+  ]
+ },
+ "CI/CD": {
+  "canonical": "CI/CD",
+  "category": "클라우드·DevOps",
+  "field": "운영",
+  "raw_names": [
+   "CI/CD",
+   "DevOps"
+  ],
+  "postings": {
+   "JA-306987": "우대",
+   "JA-289728": "필수"
+  },
+  "demand": 2,
+  "weeks": 2,
+  "prereq": [
+   "Git"
+  ],
+  "embedded": true,
+  "backend": "mock",
+  "ncs": [
+   {
+    "unit_code": "2001021407_21v1",
+    "unit_name": "클라우드 솔루션 배포 방안 수립",
+    "category": "클라우드솔루션아키텍처",
+    "score": 0.5156
+   },
+   {
+    "unit_code": "2001021510_21v1",
+    "unit_name": "클라우드 인프라스트럭쳐 서비스 배포",
+    "category": "클라우드인프라스트럭쳐엔지니어링",
+    "score": 0.4605
+   },
+   {
+    "unit_code": "2002011006_19v1",
+    "unit_name": "클라우드 백업 복구시스템 구축",
+    "category": "클라우드플랫폼구축",
+    "score": 0.4523
+   },
+   {
+    "unit_code": "2001021406_21v1",
+    "unit_name": "클라우드 솔루션 전환 설계",
+    "category": "클라우드솔루션아키텍처",
+    "score": 0.4493
+   },
+   {
+    "unit_code": "2001021402_21v1",
+    "unit_name": "클라우드 솔루션 구조 설계",
+    "category": "클라우드솔루션아키텍처",
+    "score": 0.4491
+   }
+  ],
+  "training": [],
+  "query": "CI/CD (클라우드·DevOps). 빌드·테스트·배포 자동화 파이프라인. 테스트 자동화, PaaS 배포, 클라우드 솔루션 배포 방안, 시스템 형상관리",
+  "training_titles": [
+   {
+    "과정명": "클라우드 네이티브 풀스택 & DevOps 개발자 아카데미",
+    "score": 0.5231,
+    "별칭일치": true
+   },
+   {
+    "과정명": "정보보안 기반 클라우드, 서버 DevOps 인프라 및 네트워크 구성을 통한 실무형 엔지니어 양성",
+    "score": 0.5167,
+    "별칭일치": true
+   },
+   {
+    "과정명": "[프로젝트기반]자바 풀스택 개발자(React.js, Springboot, CI/CD 활용)",
+    "score": 0.4721,
+    "별칭일치": true
+   },
+   {
+    "과정명": "클라우드&데브옵스 배포 기반 실무형 프론트&백엔드(자바, 스프링, 리액트) 멘토링 클래스",
+    "score": 0.4693,
+    "별칭일치": true
+   },
+   {
+    "과정명": "AWS & CI/CD 기반 Java 클라우드 Full-Stack 개발자 양성과정",
+    "score": 0.4666,
+    "별칭일치": true
+   }
+  ]
+ },
+ "Docker": {
+  "canonical": "Docker",
+  "category": "클라우드·DevOps",
+  "field": "운영",
+  "raw_names": [
+   "Docker"
+  ],
+  "postings": {
+   "JA-306987": "우대",
+   "JA-289728": "필수"
+  },
+  "demand": 2,
+  "weeks": 2,
+  "prereq": [
+   "Linux"
+  ],
+  "embedded": true,
+  "backend": "mock",
+  "ncs": [
+   {
+    "unit_code": "2001021307_19v1",
+    "unit_name": "클라우드 인프라스트럭쳐 서비스 구성",
+    "category": "인프라스트럭쳐아키텍트",
+    "score": 0.5949
+   },
+   {
+    "unit_code": "2001021510_21v1",
+    "unit_name": "클라우드 인프라스트럭쳐 서비스 배포",
+    "category": "클라우드인프라스트럭쳐엔지니어링",
+    "score": 0.5913
+   },
+   {
+    "unit_code": "2001021503_21v1",
+    "unit_name": "클라우드 서버 서비스 설계",
+    "category": "클라우드인프라스트럭쳐엔지니어링",
+    "score": 0.5639
+   },
+   {
+    "unit_code": "2001021501_21v1",
+    "unit_name": "클라우드 인프라스트럭쳐 서비스 정책 수립",
+    "category": "클라우드인프라스트럭쳐엔지니어링",
+    "score": 0.5293
+   },
+   {
+    "unit_code": "2002011005_19v1",
+    "unit_name": "클라우드 가상화 인프라 구축",
+    "category": "클라우드플랫폼구축",
+    "score": 0.51
+   }
+  ],
+  "training": [],
+  "query": "Docker (클라우드·DevOps). 컨테이너 가상화 도구. 애플리케이션 이미지 빌드와 배포, 클라우드 인프라스트럭쳐 서비스 구성, PaaS 배포",
+  "training_titles": [
+   {
+    "과정명": "[디지털컨버전스] 클라우드 가상화 기반 SW개발자 양성(AWS, Docker)\t\t",
+    "score": 0.587,
+    "별칭일치": true
+   },
+   {
+    "과정명": "(디지털컨버전스)Java Full-Stack 개발자를 위한 AWS 기반 Docker 컨테이너 구축 양성과정(B)",
+    "score": 0.471,
+    "별칭일치": true
+   },
+   {
+    "과정명": "클라우드 네이티브 풀스택 & DevOps 개발자 아카데미",
+    "score": 0.4294,
+    "별칭일치": false
+   },
+   {
+    "과정명": "정보보안 기반 클라우드, 서버 DevOps 인프라 및 네트워크 구성을 통한 실무형 엔지니어 양성",
+    "score": 0.4127,
+    "별칭일치": false
+   },
+   {
+    "과정명": "누구나 쉽게 접근하는 도커와 쿠버네티스 가상화",
+    "score": 0.4016,
+    "별칭일치": true
+   }
+  ]
+ },
+ "ERP": {
+  "canonical": "ERP",
+  "category": "업무 시스템",
+  "field": "관리",
+  "raw_names": [
+   "ERP"
+  ],
+  "postings": {
+   "JA-305576": "필수"
+  },
+  "demand": 1,
+  "weeks": 3,
+  "prereq": [],
+  "embedded": true,
+  "backend": "mock",
+  "ncs": [
+   {
+    "unit_code": "2001060110_19v3",
+    "unit_name": "시스템 보안 운영",
+    "category": "정보보호관리·운영",
+    "score": 0.4843
+   },
+   {
+    "unit_code": "2001060410_19v2",
+    "unit_name": "암호 시스템 운영",
+    "category": "정보보호암호·인증",
+    "score": 0.484
+   },
+   {
+    "unit_code": "2002030303_22v2",
+    "unit_name": "시스템 관리",
+    "category": "초고속망서비스",
+    "score": 0.4836
+   },
+   {
+    "unit_code": "2002031710_13v1",
+    "unit_name": "무선데이터통신서비스 시스템 보안",
+    "category": "무선데이터통신서비스",
+    "score": 0.463
+   },
+   {
+    "unit_code": "2002031305_13v1",
+    "unit_name": "특수이동통신서비스 시스템 구축(구버전)",
+    "category": "특수이동통신서비스",
+    "score": 0.456
+   }
+  ],
+  "training": [],
+  "query": "ERP (업무 시스템). 전사적 자원관리 업무 시스템. 정보시스템 운영, 업무 프로세스와 자재·회계 관리",
+  "training_titles": [
+   {
+    "과정명": "[정보시스템구축(개발·운영)] 정보시스템 보안운영 및 보안사고 분석C",
+    "score": 0.3781,
+    "별칭일치": false
+   },
+   {
+    "과정명": "재직자_[SAP] Clean Core 기반 Cloud Native 어플리케이션 개발",
+    "score": 0.3741,
+    "별칭일치": true
+   },
+   {
+    "과정명": "(정보시스템구축)정보시스템 구축·운영 기반 정보보안 전문가 양성과정(4)",
+    "score": 0.3511,
+    "별칭일치": false
+   },
+   {
+    "과정명": "(산대특)RAG·Agent 기반 AI 자동화 시스템 개발자(지원)",
+    "score": 0.3183,
+    "별칭일치": false
+   },
+   {
+    "과정명": "(AI 전문인력 양성) 업무 자동 고도화 에이전트 기반 AI 서비스 엔지니어(LLM-RAG 실무 프로젝트)",
+    "score": 0.3049,
+    "별칭일치": false
+   }
+  ]
+ },
+ "Excel": {
+  "canonical": "Excel",
+  "category": "사무 도구",
+  "field": "사무",
+  "raw_names": [
+   "Excel",
+   "엑셀"
+  ],
+  "postings": {
+   "JA-306997": "우대",
+   "JA-306789": "우대",
+   "JA-306767": "필수",
+   "JA-305756": "필수",
+   "JA-305674": "필수",
+   "JA-305576": "필수",
+   "JA-304714": "우대",
+   "JA-304663": "필수",
+   "JA-304500": "필수",
+   "JA-304113": "우대",
+   "JA-304158": "필수",
+   "JA-303577": "필수"
+  },
+  "demand": 12,
+  "weeks": 1,
+  "prereq": [],
+  "embedded": false,
+  "backend": "mock",
+  "ncs": [],
+  "training": []
+ },
+ "JSP": {
+  "canonical": "JSP",
+  "category": "웹 프레임워크",
+  "field": "개발",
+  "raw_names": [
+   "JSP"
+  ],
+  "postings": {
+   "JA-307033": "우대"
+  },
+  "demand": 1,
+  "weeks": 3,
+  "prereq": [
+   "Java"
+  ],
+  "embedded": true,
+  "backend": "mock",
+  "ncs": [
+   {
+    "unit_code": "2001021304_19v1",
+    "unit_name": "서버 구성",
+    "category": "인프라스트럭쳐아키텍트",
+    "score": 0.4441
+   },
+   {
+    "unit_code": "2001020324_19v6",
+    "unit_name": "임베디드 애플리케이션 구현",
+    "category": "임베디드SW엔지니어링",
+    "score": 0.3973
+   },
+   {
+    "unit_code": "2001030115_19v4",
+    "unit_name": "IT시스템 서버 운영관리",
+    "category": "IT시스템관리",
+    "score": 0.3946
+   },
+   {
+    "unit_code": "2001021506_21v1",
+    "unit_name": "클라우드 서버 서비스 개발",
+    "category": "클라우드인프라스트럭쳐엔지니어링",
+    "score": 0.3914
+   },
+   {
+    "unit_code": "2001021205_19v1",
+    "unit_name": "서버 연동",
+    "category": "IoT시스템정합",
+    "score": 0.3859
+   }
+  ],
+  "training": [],
+  "query": "JSP (웹 프레임워크). Java 웹 서버 페이지. 서버 프로그램 구현, 웹 애플리케이션 화면과 요청 처리",
+  "training_titles": [
+   {
+    "과정명": "Jsp 프로그래밍 입문",
+    "score": 0.4997,
+    "별칭일치": true
+   },
+   {
+    "과정명": "자바(JAVA)프로그래밍(JSP)",
+    "score": 0.4515,
+    "별칭일치": true
+   },
+   {
+    "과정명": "자바 기초 이해부터 스프링 웹 개발 향상과정(JAVA/JDBC/Servlet/JSP/Ajax/jQuery/Spring/JPA)",
+    "score": 0.4407,
+    "별칭일치": true
+   },
+   {
+    "과정명": "[자바(JAVA)]UI/UX 스프링프레임워크 활용 웹 애플리케이션 개발(SQL)",
+    "score": 0.3548,
+    "별칭일치": false
+   },
+   {
+    "과정명": "AI를 활용한 UI/UX 웹디자인 및 웹퍼블리셔 프로토타이핑 (Figma AI, ChatGPT)과정",
+    "score": 0.3198,
+    "별칭일치": false
+   }
+  ]
+ },
+ "Java": {
+  "canonical": "Java",
+  "category": "프로그래밍 언어",
+  "field": "개발",
+  "raw_names": [
+   "Java"
+  ],
+  "postings": {
+   "JA-307033": "우대",
+   "JA-306987": "우대",
+   "JA-306789": "우대"
+  },
+  "demand": 3,
+  "weeks": 6,
+  "prereq": [],
+  "embedded": true,
+  "backend": "mock",
+  "ncs": [
+   {
+    "unit_code": "2001020508_19v3",
+    "unit_name": "네트워크 프로그래밍 구현",
+    "category": "NW엔지니어링",
+    "score": 0.5208
+   },
+   {
+    "unit_code": "2002040109_22v2",
+    "unit_name": "네트워크 프로그래밍",
+    "category": "가상현실콘텐츠제작",
+    "score": 0.5166
+   },
+   {
+    "unit_code": "2001020515_19v3",
+    "unit_name": "네트워크 프로그램 최적화",
+    "category": "NW엔지니어링",
+    "score": 0.4263
+   },
+   {
+    "unit_code": "2002040108_22v2",
+    "unit_name": "가상현실 응용프로그래밍",
+    "category": "가상현실콘텐츠제작",
+    "score": 0.4227
+   },
+   {
+    "unit_code": "2003020402_17v2",
+    "unit_name": "기술 감독_PP",
+    "category": "케이블방송",
+    "score": 0.3766
+   }
+  ],
+  "training": [],
+  "query": "Java (프로그래밍 언어). 객체지향 프로그래밍 언어. 서버 프로그램 구현, 응용 소프트웨어 개발, 프로그래밍 언어 활용, 클래스와 예외 처리",
+  "training_titles": [
+   {
+    "과정명": "기초언어 자바(JAVA) 프로그래밍",
+    "score": 0.6913,
+    "별칭일치": true
+   },
+   {
+    "과정명": "자바(Java) 프로그래밍",
+    "score": 0.6863,
+    "별칭일치": true
+   },
+   {
+    "과정명": "자바(JAVA) 프로그래밍 초급",
+    "score": 0.6502,
+    "별칭일치": true
+   },
+   {
+    "과정명": "자바(JAVA) 프로그래밍 입문",
+    "score": 0.6462,
+    "별칭일치": true
+   },
+   {
+    "과정명": "[응용 소프트웨어 개발]자바(JAVA)기반 프로그래밍-A",
+    "score": 0.6444,
+    "별칭일치": true
+   }
+  ]
+ },
+ "Kubernetes": {
+  "canonical": "Kubernetes",
+  "category": "클라우드·DevOps",
+  "field": "운영",
+  "raw_names": [
+   "Kubernetes"
+  ],
+  "postings": {
+   "JA-306987": "우대",
+   "JA-289728": "필수"
+  },
+  "demand": 2,
+  "weeks": 4,
+  "prereq": [
+   "Docker"
+  ],
+  "embedded": true,
+  "backend": "mock",
+  "ncs": [
+   {
+    "unit_code": "2001021307_19v1",
+    "unit_name": "클라우드 인프라스트럭쳐 서비스 구성",
+    "category": "인프라스트럭쳐아키텍트",
+    "score": 0.5487
+   },
+   {
+    "unit_code": "2001021501_21v1",
+    "unit_name": "클라우드 인프라스트럭쳐 서비스 정책 수립",
+    "category": "클라우드인프라스트럭쳐엔지니어링",
+    "score": 0.5482
+   },
+   {
+    "unit_code": "2001021509_21v1",
+    "unit_name": "클라우드 인프라스트럭쳐 서비스 테스트",
+    "category": "클라우드인프라스트럭쳐엔지니어링",
+    "score": 0.528
+   },
+   {
+    "unit_code": "2001021503_21v1",
+    "unit_name": "클라우드 서버 서비스 설계",
+    "category": "클라우드인프라스트럭쳐엔지니어링",
+    "score": 0.5275
+   },
+   {
+    "unit_code": "2002030905_16v2",
+    "unit_name": "무선초고속인터넷서비스 운영",
+    "category": "무선초고속인터넷서비스",
+    "score": 0.5177
+   }
+  ],
+  "training": [],
+  "query": "Kubernetes (클라우드·DevOps). 컨테이너 오케스트레이션 플랫폼. 클라우드 인프라스트럭쳐 서비스 배포와 운영, PaaS 운영, 서비스 확장과 모니터링",
+  "training_titles": [
+   {
+    "과정명": "클라우드 네이티브 풀스택 & DevOps 개발자 아카데미",
+    "score": 0.3924,
+    "별칭일치": false
+   },
+   {
+    "과정명": "정보보안 기반 클라우드, 서버 DevOps 인프라 및 네트워크 구성을 통한 실무형 엔지니어 양성",
+    "score": 0.3549,
+    "별칭일치": false
+   },
+   {
+    "과정명": "[AI SHIFT TRACK] AI 서비스 개발자 과정-LLM 응용 서비스 구축_한직교",
+    "score": 0.3519,
+    "별칭일치": false
+   },
+   {
+    "과정명": "(클라우드 운영 관리) 클라우드 시스템 운영 전문가 양성1",
+    "score": 0.3464,
+    "별칭일치": false
+   },
+   {
+    "과정명": "클라우드 AI기반 마이크로서비스 풀스택(리액트/자바) 개발",
+    "score": 0.3422,
+    "별칭일치": false
+   }
+  ]
+ },
+ "MSA": {
+  "canonical": "MSA",
+  "category": "아키텍처",
+  "field": "개발",
+  "raw_names": [
+   "MSA"
+  ],
+  "postings": {
+   "JA-306987": "우대"
+  },
+  "demand": 1,
+  "weeks": 4,
+  "prereq": [
+   "Spring Boot",
+   "Docker"
+  ],
+  "embedded": true,
+  "backend": "mock",
+  "ncs": [
+   {
+    "unit_code": "2001020112_19v5",
+    "unit_name": "SW아키텍처 설계",
+    "category": "SW아키텍처",
+    "score": 0.5965
+   },
+   {
+    "unit_code": "2001010306_19v4",
+    "unit_name": "정보기술 아키텍처 설계",
+    "category": "정보기술기획",
+    "score": 0.5513
+   },
+   {
+    "unit_code": "2001020101_19v4",
+    "unit_name": "SW아키텍처 수행 관리",
+    "category": "SW아키텍처",
+    "score": 0.5338
+   },
+   {
+    "unit_code": "2001020107_19v4",
+    "unit_name": "SW아키텍처 테스트",
+    "category": "SW아키텍처",
+    "score": 0.5323
+   },
+   {
+    "unit_code": "2001021502_21v1",
+    "unit_name": "클라우드 인프라스트럭쳐 서비스 아키텍처 수립",
+    "category": "클라우드인프라스트럭쳐엔지니어링",
+    "score": 0.526
+   }
+  ],
+  "training": [],
+  "query": "MSA (아키텍처). 마이크로서비스 아키텍처. 서비스 분리 설계, SW아키텍처 설계, 클라우드 솔루션 구조 설계, PaaS 아키텍처",
+  "training_titles": [
+   {
+    "과정명": "클라우드 AI기반 마이크로서비스 풀스택(리액트/자바) 개발",
+    "score": 0.4345,
+    "별칭일치": true
+   },
+   {
+    "과정명": "심화_생성형 AI·클라우드 풀스택(리액트, 리덕스, JPA, Django) 아키텍처 단기 프로젝트 멘토링 트랙",
+    "score": 0.3952,
+    "별칭일치": false
+   },
+   {
+    "과정명": "스프링Boot & AWS 클라우드 활용 금융서비스 솔루션 백엔드 아키텍쳐 개발 프로젝트",
+    "score": 0.3583,
+    "별칭일치": false
+   },
+   {
+    "과정명": "지역인재양성을 위한 MSA기반 크로스 플랫폼(자바,Springboot,Flutter) 개발자 과정",
+    "score": 0.3415,
+    "별칭일치": true
+   },
+   {
+    "과정명": "심화_AI를 활용한 백엔드 아키텍처 심화 과정",
+    "score": 0.3374,
+    "별칭일치": false
+   }
+  ]
+ },
+ "MongoDB": {
+  "canonical": "MongoDB",
+  "category": "데이터베이스",
+  "field": "DB",
+  "raw_names": [
+   "MongoDB"
+  ],
+  "postings": {
+   "JA-306987": "우대"
+  },
+  "demand": 1,
+  "weeks": 2,
+  "prereq": [],
+  "embedded": true,
+  "backend": "mock",
+  "ncs": [
+   {
+    "unit_code": "2001020412_19v4",
+    "unit_name": "데이터 전환",
+    "category": "DB엔지니어링",
+    "score": 0.6693
+   },
+   {
+    "unit_code": "2001020405_19v4",
+    "unit_name": "데이터베이스 구현",
+    "category": "DB엔지니어링",
+    "score": 0.6659
+   },
+   {
+    "unit_code": "2001020404_19v4",
+    "unit_name": "물리 데이터베이스 설계",
+    "category": "DB엔지니어링",
+    "score": 0.6312
+   },
+   {
+    "unit_code": "2001021107_19v2",
+    "unit_name": "데이터베이스 검증",
+    "category": "데이터아키텍처",
+    "score": 0.611
+   },
+   {
+    "unit_code": "2001020411_19v4",
+    "unit_name": "데이터 전환 설계",
+    "category": "DB엔지니어링",
+    "score": 0.6015
+   }
+  ],
+  "training": [],
+  "query": "MongoDB (데이터베이스). NoSQL 문서형 데이터베이스. 비정형 데이터 저장, 데이터베이스 구현, 빅데이터 저장소 구축",
+  "training_titles": [
+   {
+    "과정명": "데이터베이스 구현 및 SQL 입문",
+    "score": 0.5128,
+    "별칭일치": false
+   },
+   {
+    "과정명": "쉽게 배우는 데이터베이스 MySQL",
+    "score": 0.4728,
+    "별칭일치": false
+   },
+   {
+    "과정명": "R 프로그래밍 활용 빅데이터 분석",
+    "score": 0.391,
+    "별칭일치": false
+   },
+   {
+    "과정명": "(머신러닝+딥러닝 활용)제조 데이터를 활용한 빅데이터 플랫폼 구축과정",
+    "score": 0.3902,
+    "별칭일치": false
+   },
+   {
+    "과정명": "(산대특)23ai를 활용한 AI 데이터베이스 구축실무과정_지원",
+    "score": 0.3899,
+    "별칭일치": false
+   }
+  ]
+ },
+ "MySQL": {
+  "canonical": "MySQL",
+  "category": "데이터베이스",
+  "field": "DB",
+  "raw_names": [
+   "MySQL"
+  ],
+  "postings": {
+   "JA-306987": "우대"
+  },
+  "demand": 1,
+  "weeks": 3,
+  "prereq": [
+   "SQL"
+  ],
+  "embedded": true,
+  "backend": "mock",
+  "ncs": [
+   {
+    "unit_code": "2001020405_19v4",
+    "unit_name": "데이터베이스 구현",
+    "category": "DB엔지니어링",
+    "score": 0.7383
+   },
+   {
+    "unit_code": "2001020404_19v4",
+    "unit_name": "물리 데이터베이스 설계",
+    "category": "DB엔지니어링",
+    "score": 0.7351
+   },
+   {
+    "unit_code": "2001021107_19v2",
+    "unit_name": "데이터베이스 검증",
+    "category": "데이터아키텍처",
+    "score": 0.6253
+   },
+   {
+    "unit_code": "2001020412_19v4",
+    "unit_name": "데이터 전환",
+    "category": "DB엔지니어링",
+    "score": 0.6142
+   },
+   {
+    "unit_code": "2001020403_19v4",
+    "unit_name": "논리 데이터베이스 설계",
+    "category": "DB엔지니어링",
+    "score": 0.5857
+   }
+  ],
+  "training": [],
+  "query": "MySQL (데이터베이스). 오픈소스 관계형 데이터베이스. 데이터베이스 구현, 물리 데이터베이스 설계, SQL 활용, DB 운영관리",
+  "training_titles": [
+   {
+    "과정명": "쉽게 배우는 데이터베이스 MySQL",
+    "score": 0.767,
+    "별칭일치": true
+   },
+   {
+    "과정명": "데이터베이스 구현 및 SQL 입문",
+    "score": 0.6148,
+    "별칭일치": false
+   },
+   {
+    "과정명": "(산대특)23ai를 활용한 AI 데이터베이스 구축실무과정_지원",
+    "score": 0.3983,
+    "별칭일치": false
+   },
+   {
+    "과정명": "(머신러닝+딥러닝 활용)제조 데이터를 활용한 빅데이터 플랫폼 구축과정",
+    "score": 0.3277,
+    "별칭일치": false
+   },
+   {
+    "과정명": "SQL 개발자 국가공인 자격증(SQLD, 데이터자격시험)",
+    "score": 0.3191,
+    "별칭일치": false
+   }
+  ]
+ },
+ "Oracle DB": {
+  "canonical": "Oracle DB",
+  "category": "데이터베이스",
+  "field": "DB",
+  "raw_names": [
+   "Oracle"
+  ],
+  "postings": {
+   "JA-307033": "우대",
+   "JA-306789": "우대"
+  },
+  "demand": 2,
+  "weeks": 4,
+  "prereq": [
+   "SQL"
+  ],
+  "embedded": true,
+  "backend": "mock",
+  "ncs": [
+   {
+    "unit_code": "2001020405_19v4",
+    "unit_name": "데이터베이스 구현",
+    "category": "DB엔지니어링",
+    "score": 0.642
+   },
+   {
+    "unit_code": "2001030108_19v3",
+    "unit_name": "DB 운영관리",
+    "category": "IT시스템관리",
+    "score": 0.586
+   },
+   {
+    "unit_code": "2001020404_19v4",
+    "unit_name": "물리 데이터베이스 설계",
+    "category": "DB엔지니어링",
+    "score": 0.5836
+   },
+   {
+    "unit_code": "2001021107_19v2",
+    "unit_name": "데이터베이스 검증",
+    "category": "데이터아키텍처",
+    "score": 0.5694
+   },
+   {
+    "unit_code": "2001020412_19v4",
+    "unit_name": "데이터 전환",
+    "category": "DB엔지니어링",
+    "score": 0.5599
+   }
+  ],
+  "training": [],
+  "query": "Oracle DB (데이터베이스). 상용 관계형 데이터베이스. 데이터베이스 구현과 성능확보, SQL 응용, DB 운영관리와 튜닝",
+  "training_titles": [
+   {
+    "과정명": "데이터베이스 구현 및 SQL 입문",
+    "score": 0.5239,
+    "별칭일치": false
+   },
+   {
+    "과정명": "쉽게 배우는 데이터베이스 MySQL",
+    "score": 0.4909,
+    "별칭일치": false
+   },
+   {
+    "과정명": "Oracle SQL 기초이해부터 옵티마이저. Hint, Tuning 실무 향상과정",
+    "score": 0.4465,
+    "별칭일치": true
+   },
+   {
+    "과정명": "빅데이터를 활용한 오라클 데이터 전문가 부트캠프",
+    "score": 0.4128,
+    "별칭일치": true
+   },
+   {
+    "과정명": "Oracle SQL 기초 이해부터 실무활용 과정(SQL/PL-SQL)",
+    "score": 0.4105,
+    "별칭일치": true
+   }
+  ]
+ },
+ "PC활용": {
+  "canonical": "PC활용",
+  "category": "사무 도구",
+  "field": "사무",
+  "raw_names": [
+   "MS Office",
+   "PC활용"
+  ],
+  "postings": {
+   "JA-307033": "우대",
+   "JA-306767": "필수"
+  },
+  "demand": 2,
+  "weeks": 1,
+  "prereq": [],
+  "embedded": false,
+  "backend": "mock",
+  "ncs": [],
+  "training": []
+ },
+ "React.js": {
+  "canonical": "React.js",
+  "category": "프론트엔드 프레임워크",
+  "field": "개발",
+  "raw_names": [
+   "React.js"
+  ],
+  "postings": {
+   "JA-306987": "우대"
+  },
+  "demand": 1,
+  "weeks": 5,
+  "prereq": [
+   "JavaScript",
+   "HTML/CSS"
+  ],
+  "embedded": true,
+  "backend": "mock",
+  "ncs": [
+   {
+    "unit_code": "2001021606_22v1",
+    "unit_name": "PaaS 프론트엔드 개발",
+    "category": "PaaS엔지니어링",
+    "score": 0.6084
+   },
+   {
+    "unit_code": "2001021604_22v1",
+    "unit_name": "PaaS 프론트엔드 설계",
+    "category": "PaaS엔지니어링",
+    "score": 0.5593
+   },
+   {
+    "unit_code": "2001021605_22v1",
+    "unit_name": "PaaS 백엔드 개발",
+    "category": "PaaS엔지니어링",
+    "score": 0.3934
+   },
+   {
+    "unit_code": "2001020310_19v3",
+    "unit_name": "기술문서 개발",
+    "category": "임베디드SW엔지니어링",
+    "score": 0.3693
+   },
+   {
+    "unit_code": "2001021307_19v1",
+    "unit_name": "클라우드 인프라스트럭쳐 서비스 구성",
+    "category": "인프라스트럭쳐아키텍트",
+    "score": 0.3653
+   }
+  ],
+  "training": [],
+  "query": "React.js (프론트엔드 프레임워크). 웹 프론트엔드 UI 라이브러리. 화면 구현, UI 구현, PaaS 프론트엔드 개발, 컴포넌트 기반 사용자 인터페이스",
+  "training_titles": [
+   {
+    "과정명": "프론트엔드 React.js 기초",
+    "score": 0.7249,
+    "별칭일치": true
+   },
+   {
+    "과정명": "생성형AI 기반 UX UI  디자인& 프론트엔드 개발 과정(ChatGPT, 일러 포토, 피그마, 자바스크립트, 리액트)",
+    "score": 0.6547,
+    "별칭일치": true
+   },
+   {
+    "과정명": "프론트엔드 개발자의 필수! React.js 기초부터 실무까지",
+    "score": 0.6484,
+    "별칭일치": true
+   },
+   {
+    "과정명": "(디지털디자인)생성형AI 기반 UXUI 디자인& 프론트엔드 과정(ChatGPT, 일러 포토, 피그마, 자바스크립트, 리액트)",
+    "score": 0.6399,
+    "별칭일치": true
+   },
+   {
+    "과정명": "진짜 할 수 있다! 프론트엔드 개발 리액트(React.js)",
+    "score": 0.6232,
+    "별칭일치": true
+   }
+  ]
+ },
+ "SQL": {
+  "canonical": "SQL",
+  "category": "데이터베이스",
+  "field": "DB",
+  "raw_names": [
+   "SQL"
+  ],
+  "postings": {
+   "JA-306789": "우대"
+  },
+  "demand": 1,
+  "weeks": 3,
+  "prereq": [],
+  "embedded": true,
+  "backend": "mock",
+  "ncs": [
+   {
+    "unit_code": "2001020413_19v4",
+    "unit_name": "SQL활용",
+    "category": "DB엔지니어링",
+    "score": 0.5531
+   },
+   {
+    "unit_code": "2001020415_19v1",
+    "unit_name": "SQL작성",
+    "category": "DB엔지니어링",
+    "score": 0.5519
+   },
+   {
+    "unit_code": "2001020414_19v4",
+    "unit_name": "SQL응용",
+    "category": "DB엔지니어링",
+    "score": 0.5185
+   },
+   {
+    "unit_code": "2001020412_19v4",
+    "unit_name": "데이터 전환",
+    "category": "DB엔지니어링",
+    "score": 0.4301
+   },
+   {
+    "unit_code": "2001020411_19v4",
+    "unit_name": "데이터 전환 설계",
+    "category": "DB엔지니어링",
+    "score": 0.4128
+   }
+  ],
+  "training": [],
+  "query": "SQL (데이터베이스). 관계형 데이터베이스 질의 언어. SQL 작성, SQL 활용, SQL 응용, 테이블 조회와 조인",
+  "training_titles": [
+   {
+    "과정명": "데이터베이스 구현 및 SQL 입문",
+    "score": 0.7197,
+    "별칭일치": true
+   },
+   {
+    "과정명": "쉽게 배우는 데이터베이스 MySQL",
+    "score": 0.602,
+    "별칭일치": true
+   },
+   {
+    "과정명": "SQL 개발자(SQLD) 자격증 취득",
+    "score": 0.5986,
+    "별칭일치": true
+   },
+   {
+    "과정명": "SQL 개발자 국가공인 자격증(SQLD, 데이터자격시험)",
+    "score": 0.5876,
+    "별칭일치": true
+   },
+   {
+    "과정명": "Oracle SQL 기초 이해부터 실무활용 과정(SQL/PL-SQL)",
+    "score": 0.5756,
+    "별칭일치": true
+   }
+  ]
+ },
+ "SQL 튜닝": {
+  "canonical": "SQL 튜닝",
+  "category": "데이터베이스",
+  "field": "DB",
+  "raw_names": [
+   "SQL 튜닝"
+  ],
+  "postings": {
+   "JA-306987": "우대"
+  },
+  "demand": 1,
+  "weeks": 3,
+  "prereq": [
+   "SQL"
+  ],
+  "embedded": true,
+  "backend": "mock",
+  "ncs": [
+   {
+    "unit_code": "2001020413_19v4",
+    "unit_name": "SQL활용",
+    "category": "DB엔지니어링",
+    "score": 0.4844
+   },
+   {
+    "unit_code": "2001020415_19v1",
+    "unit_name": "SQL작성",
+    "category": "DB엔지니어링",
+    "score": 0.482
+   },
+   {
+    "unit_code": "2001020414_19v4",
+    "unit_name": "SQL응용",
+    "category": "DB엔지니어링",
+    "score": 0.4648
+   },
+   {
+    "unit_code": "2001020404_19v4",
+    "unit_name": "물리 데이터베이스 설계",
+    "category": "DB엔지니어링",
+    "score": 0.464
+   },
+   {
+    "unit_code": "2001020411_19v4",
+    "unit_name": "데이터 전환 설계",
+    "category": "DB엔지니어링",
+    "score": 0.457
+   }
+  ],
+  "training": [],
+  "query": "SQL 튜닝 (데이터베이스). SQL 실행 계획 분석과 질의 최적화. 데이터베이스 성능확보, SQL 응용, 인덱스 설계",
+  "training_titles": [
+   {
+    "과정명": "데이터베이스 구현 및 SQL 입문",
+    "score": 0.541,
+    "별칭일치": false
+   },
+   {
+    "과정명": "쉽게 배우는 데이터베이스 MySQL",
+    "score": 0.4432,
+    "별칭일치": false
+   },
+   {
+    "과정명": "한번에 끝내는 SQL 개발자(SQLD)",
+    "score": 0.4054,
+    "별칭일치": false
+   },
+   {
+    "과정명": "SQL 개발자 국가공인 자격증(SQLD, 데이터자격시험)",
+    "score": 0.3954,
+    "별칭일치": false
+   },
+   {
+    "과정명": "SQL 개발자(SQLD) 자격증 취득",
+    "score": 0.3844,
+    "별칭일치": false
+   }
+  ]
+ },
+ "Spring Boot": {
+  "canonical": "Spring Boot",
+  "category": "백엔드 프레임워크",
+  "field": "개발",
+  "raw_names": [
+   "Spring Boot"
+  ],
+  "postings": {
+   "JA-306987": "우대"
+  },
+  "demand": 1,
+  "weeks": 6,
+  "prereq": [
+   "Java"
+  ],
+  "embedded": true,
+  "backend": "mock",
+  "ncs": [
+   {
+    "unit_code": "2001021605_22v1",
+    "unit_name": "PaaS 백엔드 개발",
+    "category": "PaaS엔지니어링",
+    "score": 0.5023
+   },
+   {
+    "unit_code": "2001021603_22v1",
+    "unit_name": "PaaS 백엔드 설계",
+    "category": "PaaS엔지니어링",
+    "score": 0.4577
+   },
+   {
+    "unit_code": "2001021606_22v1",
+    "unit_name": "PaaS 프론트엔드 개발",
+    "category": "PaaS엔지니어링",
+    "score": 0.3809
+   },
+   {
+    "unit_code": "2001020508_19v3",
+    "unit_name": "네트워크 프로그래밍 구현",
+    "category": "NW엔지니어링",
+    "score": 0.3797
+   },
+   {
+    "unit_code": "2001060409_19v2",
+    "unit_name": "암호·인증 모듈 개발",
+    "category": "정보보호암호·인증",
+    "score": 0.3752
+   }
+  ],
+  "training": [],
+  "query": "Spring Boot (백엔드 프레임워크). Java 기반 백엔드 웹 프레임워크. REST API 서버 프로그램 구현, 인터페이스 구현, PaaS 백엔드 개발",
+  "training_titles": [
+   {
+    "과정명": "프로그래머스 데브코스 심화_Spring AI와 MSA를 활용한 백엔드 개발",
+    "score": 0.5878,
+    "별칭일치": true
+   },
+   {
+    "과정명": "[정보처리산업기사]자바 기반 백엔드 풀스택 웹개발(JAVA,Spring)",
+    "score": 0.5677,
+    "별칭일치": true
+   },
+   {
+    "과정명": "스프링Boot & AWS 클라우드 활용 금융서비스 솔루션 백엔드 아키텍쳐 개발 프로젝트",
+    "score": 0.5473,
+    "별칭일치": true
+   },
+   {
+    "과정명": "AWS 활용 Spring 백엔드 개발자 실무 부트캠프",
+    "score": 0.5438,
+    "별칭일치": true
+   },
+   {
+    "과정명": "클라우드&데브옵스 배포 기반 실무형 프론트&백엔드(자바, 스프링, 리액트) 멘토링 클래스",
+    "score": 0.4979,
+    "별칭일치": true
+   }
+  ]
+ },
+ "고소작업차": {
+  "canonical": "고소작업차",
+  "category": "현장 장비",
+  "field": "현장",
+  "raw_names": [
+   "1.2톤 고소작업차 운행",
+   "고소작업차량 운전"
+  ],
+  "postings": {
+   "JA-307122": "필수",
+   "JA-306839": "필수",
+   "JA-305756": "필수",
+   "JA-305083": "우대",
+   "JA-304573": "필수",
+   "JA-303511": "필수"
+  },
+  "demand": 6,
+  "weeks": 0,
+  "prereq": [],
+  "embedded": false,
+  "backend": "mock",
+  "ncs": [],
+  "training": []
+ },
+ "머신러닝": {
+  "canonical": "머신러닝",
+  "category": "AI·데이터",
+  "field": "데이터",
+  "raw_names": [
+   "딥러닝",
+   "머신러닝"
+  ],
+  "postings": {
+   "JA-304092": "필수"
+  },
+  "demand": 1,
+  "weeks": 8,
+  "prereq": [
+   "Python"
+  ],
+  "embedded": true,
+  "backend": "mock",
+  "ncs": [
+   {
+    "unit_code": "2001010513_21v1",
+    "unit_name": "빅데이터 분석 모델링",
+    "category": "빅데이터분석",
+    "score": 0.6082
+   },
+   {
+    "unit_code": "2001070505_20v1",
+    "unit_name": "인공지능서비스 모델적용",
+    "category": "인공지능서비스구현",
+    "score": 0.5503
+   },
+   {
+    "unit_code": "2001070504_20v1",
+    "unit_name": "인공지능서비스 애플리케이션 개발",
+    "category": "인공지능서비스구현",
+    "score": 0.5405
+   },
+   {
+    "unit_code": "2001010703_19v2",
+    "unit_name": "빅데이터 분석 기획",
+    "category": "빅데이터기획",
+    "score": 0.5384
+   },
+   {
+    "unit_code": "2001070306_23v2",
+    "unit_name": "인공지능 모델 학습",
+    "category": "인공지능모델링",
+    "score": 0.532
+   }
+  ],
+  "training": [],
+  "query": "머신러닝 (AI·데이터). 기계학습·딥러닝 모델 개발. 인공지능 모델링, 빅데이터 분석 모델링, 인공지능서비스 애플리케이션 개발",
+  "training_titles": [
+   {
+    "과정명": "빅데이터 분석 및 AI(머신·딥러닝) 활용 개발 전문가 취업캠프",
+    "score": 0.5783,
+    "별칭일치": true
+   },
+   {
+    "과정명": "[AI 활용 소프트웨어 개발 및 응용]자바,파이썬 활용 빅데이터분석과 AI(머신러닝,딥러닝,인공지능) SW개발자 양성",
+    "score": 0.5676,
+    "별칭일치": true
+   },
+   {
+    "과정명": "빅데이터 분석을 위한 AI(머신러닝,딥러닝기반)서비스 개발자 양성(JAVA,파이썬)",
+    "score": 0.5656,
+    "별칭일치": true
+   },
+   {
+    "과정명": "진짜 할 수 있다! 데이터 분석과 머신러닝",
+    "score": 0.5158,
+    "별칭일치": true
+   },
+   {
+    "과정명": "심화_심층 데이터 분석을 통한 개인 맞춤형 예측 자동화 서비스 솔루션 개발 과정 (Hadoop, Tableau, TensorFlow)",
+    "score": 0.5142,
+    "별칭일치": true
+   }
+  ]
+ },
+ "모바일 단말기": {
+  "canonical": "모바일 단말기",
+  "category": "현장 장비",
+  "field": "현장",
+  "raw_names": [
+   "모바일 단말기 사용"
+  ],
+  "postings": {
+   "JA-305977": "필수",
+   "JA-304414": "필수"
+  },
+  "demand": 2,
+  "weeks": 1,
+  "prereq": [],
+  "embedded": false,
+  "backend": "mock",
+  "ncs": [],
+  "training": []
+ },
+ "전자정부 표준프레임워크": {
+  "canonical": "전자정부 표준프레임워크",
+  "category": "백엔드 프레임워크",
+  "field": "개발",
+  "raw_names": [
+   "전자정부프레임워크"
+  ],
+  "postings": {
+   "JA-307033": "우대"
+  },
+  "demand": 1,
+  "weeks": 4,
+  "prereq": [
+   "Spring Boot"
+  ],
+  "embedded": true,
+  "backend": "mock",
+  "ncs": [
+   {
+    "unit_code": "2002020212_22v2",
+    "unit_name": "정보통신 기술표준 활용",
+    "category": "전송시스템구축",
+    "score": 0.408
+   },
+   {
+    "unit_code": "2002010112_16v1",
+    "unit_name": "정보통신 표준 응용",
+    "category": "교환시스템구축",
+    "score": 0.4002
+   },
+   {
+    "unit_code": "2001010211_19v4",
+    "unit_name": "정보시스템인프라분석",
+    "category": "정보기술컨설팅",
+    "score": 0.3898
+   },
+   {
+    "unit_code": "2002010307_22v3",
+    "unit_name": "네트워크구축감리",
+    "category": "네트워크구축",
+    "score": 0.3832
+   },
+   {
+    "unit_code": "2001010212_19v4",
+    "unit_name": "정보시스템애플리케이션분석",
+    "category": "정보기술컨설팅",
+    "score": 0.3723
+   }
+  ],
+  "training": [],
+  "query": "전자정부 표준프레임워크 (백엔드 프레임워크). 공공기관 표준 Spring 기반 개발 프레임워크. 정보시스템 서버 프로그램 구현과 공통 컴포넌트",
+  "training_titles": [
+   {
+    "과정명": "Vue 프레임워크를 활용한 웹프론트엔드 개발 입문 과정",
+    "score": 0.4578,
+    "별칭일치": false
+   },
+   {
+    "과정명": "(정보시스템구축)정보시스템 구축·운영 기반 정보보안 전문가 양성과정(4)",
+    "score": 0.3801,
+    "별칭일치": false
+   },
+   {
+    "과정명": "Spring 서버 프로그래밍 입문",
+    "score": 0.3541,
+    "별칭일치": false
+   },
+   {
+    "과정명": "프로그래머스 데브코스 심화_Spring AI와 MSA를 활용한 백엔드 개발",
+    "score": 0.3451,
+    "별칭일치": false
+   },
+   {
+    "과정명": "[AI 개발 입문] GPT & Python(파이썬) 기반 기초 프로그래밍 과정",
+    "score": 0.3382,
+    "별칭일치": false
+   }
+  ]
+ },
+ "한글(HWP)": {
+  "canonical": "한글(HWP)",
+  "category": "사무 도구",
+  "field": "사무",
+  "raw_names": [
+   "HWP",
+   "한글",
+   "한글(HWP)"
+  ],
+  "postings": {
+   "JA-306997": "우대",
+   "JA-307033": "우대",
+   "JA-306789": "우대",
+   "JA-306767": "필수",
+   "JA-305756": "필수",
+   "JA-305674": "필수",
+   "JA-305576": "필수",
+   "JA-304714": "우대",
+   "JA-304663": "필수",
+   "JA-304500": "필수",
+   "JA-304113": "우대",
+   "JA-304158": "필수",
+   "JA-303577": "필수"
+  },
+  "demand": 13,
+  "weeks": 1,
+  "prereq": [],
+  "embedded": false,
+  "backend": "mock",
+  "ncs": [],
+  "training": []
+ }
+}

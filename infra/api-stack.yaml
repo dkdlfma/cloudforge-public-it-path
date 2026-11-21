@@ -1,0 +1,181 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: >-
+  aws_edu - 추천 API (Cognito 로그인 -> API Gateway HTTP API(JWT 인증) -> 추천 Lambda -> S3 processed/)   담당 강민경
+
+Parameters:
+  Team:
+    Type: String
+  BucketName:
+    Type: String
+  CodeKey:
+    Type: String
+    Description: S3 에 올린 추천 Lambda 코드 zip 경로
+
+Resources:
+  # ---------------------------------------------------------------- Cognito (로그인)
+  UserPool:
+    Type: AWS::Cognito::UserPool
+    Properties:
+      UserPoolName: !Sub aws-edu-${Team}-users
+      AdminCreateUserConfig:
+        AllowAdminCreateUserOnly: true            # 아무나 가입 못 하게 — 팀이 사용자 직접 생성
+      Policies:
+        PasswordPolicy:
+          MinimumLength: 8
+          RequireLowercase: true
+          RequireNumbers: true
+          RequireSymbols: false
+          RequireUppercase: false
+      AccountRecoverySetting:
+        RecoveryMechanisms:
+          - Name: admin_only
+            Priority: 1
+      UserPoolTags:
+        project: aws_edu
+
+  UserPoolClient:
+    Type: AWS::Cognito::UserPoolClient
+    Properties:
+      ClientName: !Sub aws-edu-${Team}-app
+      UserPoolId: !Ref UserPool
+      GenerateSecret: false                       # Streamlit(현진님 auth.py)·스크립트에서 쓰려면 시크릿 없음
+      ExplicitAuthFlows:
+        - ALLOW_USER_PASSWORD_AUTH
+        - ALLOW_REFRESH_TOKEN_AUTH
+      PreventUserExistenceErrors: ENABLED
+      IdTokenValidity: 1
+      AccessTokenValidity: 1
+      RefreshTokenValidity: 7
+      TokenValidityUnits:
+        IdToken: hours
+        AccessToken: hours
+        RefreshToken: days
+
+  # ---------------------------------------------------------------- 추천 Lambda
+  RecommendRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: !Sub aws-edu-${Team}-recommend-role
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal: { Service: lambda.amazonaws.com }
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      Policies:
+        - PolicyName: recommend-read-data
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow                       # 분석 결과 읽기만 (쓰기 권한 없음)
+                Action: s3:GetObject
+                Resource: !Sub arn:aws:s3:::${BucketName}/processed/*
+
+  RecommendLogs:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub /aws/lambda/aws-edu-${Team}-recommend
+      RetentionInDays: 14
+
+  RecommendFunction:
+    Type: AWS::Lambda::Function
+    DependsOn: RecommendLogs
+    Properties:
+      FunctionName: !Sub aws-edu-${Team}-recommend
+      Description: 공고 ID + 사용자 프로필 -> 학습경로 (recommend/engine.py)
+      Runtime: python3.12
+      Handler: lambda_recommend.handler
+      Role: !GetAtt RecommendRole.Arn
+      Timeout: 29                                 # API Gateway 최대 대기 시간에 맞춤
+      MemorySize: 1024
+      Code:
+        S3Bucket: !Ref BucketName
+        S3Key: !Ref CodeKey
+      Environment:
+        Variables:
+          BUCKET: !Ref BucketName
+
+  # ---------------------------------------------------------------- API Gateway (HTTP API + JWT 인증)
+  HttpApi:
+    Type: AWS::ApiGatewayV2::Api
+    Properties:
+      Name: !Sub aws-edu-${Team}-api
+      ProtocolType: HTTP
+      Description: 공공기관 IT 직무 학습경로 추천 API (Cognito 로그인 필요)
+
+  JwtAuthorizer:
+    Type: AWS::ApiGatewayV2::Authorizer
+    Properties:
+      ApiId: !Ref HttpApi
+      Name: cognito
+      AuthorizerType: JWT
+      IdentitySource: ["$request.header.Authorization"]
+      JwtConfiguration:
+        Audience: [!Ref UserPoolClient]
+        Issuer: !Sub https://cognito-idp.${AWS::Region}.amazonaws.com/${UserPool}
+
+  LambdaIntegration:
+    Type: AWS::ApiGatewayV2::Integration
+    Properties:
+      ApiId: !Ref HttpApi
+      IntegrationType: AWS_PROXY
+      IntegrationUri: !GetAtt RecommendFunction.Arn
+      PayloadFormatVersion: "2.0"
+      TimeoutInMillis: 29000
+
+  PostingsRoute:
+    Type: AWS::ApiGatewayV2::Route
+    Properties:
+      ApiId: !Ref HttpApi
+      RouteKey: GET /postings
+      AuthorizationType: JWT
+      AuthorizerId: !Ref JwtAuthorizer
+      Target: !Sub integrations/${LambdaIntegration}
+
+  RecommendRoute:
+    Type: AWS::ApiGatewayV2::Route
+    Properties:
+      ApiId: !Ref HttpApi
+      RouteKey: POST /recommend
+      AuthorizationType: JWT
+      AuthorizerId: !Ref JwtAuthorizer
+      Target: !Sub integrations/${LambdaIntegration}
+
+  ApiLogs:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub /aws/apigateway/aws-edu-${Team}-api
+      RetentionInDays: 14
+
+  DefaultStage:
+    Type: AWS::ApiGatewayV2::Stage
+    Properties:
+      ApiId: !Ref HttpApi
+      StageName: $default
+      AutoDeploy: true
+      DefaultRouteSettings:                       # 과도한 호출 차단 (비용·남용 보호)
+        ThrottlingBurstLimit: 20
+        ThrottlingRateLimit: 10
+      AccessLogSettings:
+        DestinationArn: !GetAtt ApiLogs.Arn
+        Format: '{"requestId":"$context.requestId","time":"$context.requestTime","route":"$context.routeKey","status":"$context.status","sub":"$context.authorizer.claims.sub","latency":"$context.responseLatency","error":"$context.authorizer.error"}'
+
+  ApiInvokePermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      FunctionName: !Ref RecommendFunction
+      Action: lambda:InvokeFunction
+      Principal: apigateway.amazonaws.com
+      SourceArn: !Sub arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${HttpApi}/*/*
+
+Outputs:
+  ApiUrl:
+    Value: !Sub https://${HttpApi}.execute-api.${AWS::Region}.amazonaws.com
+  UserPoolId:
+    Value: !Ref UserPool
+  UserPoolClientId:
+    Value: !Ref UserPoolClient
+  FunctionName:
+    Value: !Ref RecommendFunction
